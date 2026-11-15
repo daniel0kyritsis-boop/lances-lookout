@@ -1,0 +1,13 @@
+numpy
+astropy>=6
+pyvo>=1.5
+astroquery>=0.4.7
+requests
+reproject>=0.13
+scipy
+pillow
+matplotlib
+fastapi
+uvicorn[standard]
+pytest
+httpx

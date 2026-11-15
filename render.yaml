@@ -1,0 +1,13 @@
+# Render Blueprint: free Docker web service for SPHEREx – Lance's Lookout.
+# On render.com: New > Blueprint > pick this repository. Render builds the Dockerfile
+# and sets $PORT itself. Free instances sleep after 15 minutes idle and take about a
+# minute to wake, so open the site shortly before a demo.
+services:
+  - type: web
+    name: lances-lookout
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/targets
+    envVars:
+      - key: SPHEREX_WARM_ON_START
+        value: "1"

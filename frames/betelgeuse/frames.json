@@ -1,0 +1,85 @@
+{
+  "target": "Betelgeuse",
+  "ra": 88.7931411,
+  "dec": 7.4071462,
+  "fov_deg": 0.1,
+  "width": 117,
+  "height": 117,
+  "pixel_arcsec": 3.1,
+  "wcs": {
+    "CTYPE1": "RA---TAN",
+    "CTYPE2": "DEC--TAN",
+    "CRVAL1": 88.793141088535,
+    "CRVAL2": 7.4071462260675,
+    "CRPIX1": 59.0,
+    "CRPIX2": 59.0,
+    "CDELT1": -0.00086111111111111,
+    "CDELT2": 0.00086111111111111
+  },
+  "display": {
+    "stretch": "asinh",
+    "vmin": -171.2127685546875,
+    "vmax": 1322.8902587890625,
+    "unit": "MJy/sr",
+    "diff_limit": 221.85617065429688
+  },
+  "pair": {
+    "file": "pair.png",
+    "from_epoch": 0,
+    "to_epoch": 2,
+    "note": "later minus earlier: white = brighter now, black = fainter now"
+  },
+  "frames": [
+    {
+      "epoch": 0,
+      "file": "epoch_0.png",
+      "diff_file": "diff_0.png",
+      "n_frames": 11,
+      "start": "2025-09-17T07:17:33Z",
+      "end": "2025-09-19T22:56:16Z",
+      "mid_year": 2025.714,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.132,
+        1.601
+      ],
+      "saturated_px": 0
+    },
+    {
+      "epoch": 1,
+      "file": "epoch_1.png",
+      "diff_file": "diff_1.png",
+      "n_frames": 14,
+      "start": "2026-03-09T19:59:07Z",
+      "end": "2026-03-17T05:36:37Z",
+      "mid_year": 2026.198,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.1,
+        1.613
+      ],
+      "saturated_px": 0
+    },
+    {
+      "epoch": 2,
+      "file": "epoch_2.png",
+      "diff_file": "diff_2.png",
+      "n_frames": 18,
+      "start": "2026-09-16T09:58:17Z",
+      "end": "2026-09-28T13:41:32Z",
+      "mid_year": 2026.711,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.085,
+        1.655
+      ],
+      "saturated_px": 0
+    }
+  ]
+}

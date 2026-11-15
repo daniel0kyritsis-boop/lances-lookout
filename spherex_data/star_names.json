@@ -1,0 +1,5805 @@
+[
+{
+"name": "2MASS J04151954-0935066",
+"aliases": [
+"2MASS 0415-0935"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 63.831432,
+"dec": -9.585187
+},
+{
+"name": "3C 273",
+"aliases": [],
+"kind": "variable",
+"source": "extra",
+"ra": 187.277916,
+"dec": 2.052388
+},
+{
+"name": "61 Cyg A",
+"aliases": [
+"61 Cygni"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 316.724748,
+"dec": 38.749417
+},
+{
+"name": "AB Aur",
+"aliases": [],
+"kind": "variable",
+"source": "extra",
+"ra": 73.941025,
+"dec": 30.551192
+},
+{
+"name": "Absolutno",
+"aliases": [
+"XO-5"
+],
+"kind": "star",
+"ra": 116.716506,
+"dec": 39.094572,
+"source": "IAU"
+},
+{
+"name": "Acamar",
+"aliases": [
+"HR 897",
+"tet1 Eri",
+"Theta1 Eri"
+],
+"kind": "star",
+"ra": 44.565314,
+"dec": -40.304681,
+"source": "IAU"
+},
+{
+"name": "Achernar",
+"aliases": [
+"HR 472",
+"alf Eri",
+"Alpha Eri"
+],
+"kind": "star",
+"ra": 24.428523,
+"dec": -57.236753,
+"source": "IAU"
+},
+{
+"name": "Achird",
+"aliases": [
+"HR 219",
+"eta Cas",
+"Eta Cas"
+],
+"kind": "star",
+"ra": 12.276227,
+"dec": 57.815177,
+"source": "IAU"
+},
+{
+"name": "Acrab",
+"aliases": [
+"HR 5984",
+"bet Sco",
+"Beta Sco"
+],
+"kind": "star",
+"ra": 241.359292,
+"dec": -19.805389,
+"source": "IAU"
+},
+{
+"name": "Acrux",
+"aliases": [
+"HR 4730",
+"alf Cru",
+"Alpha Cru"
+],
+"kind": "star",
+"ra": 186.649563,
+"dec": -63.099093,
+"source": "IAU"
+},
+{
+"name": "Acubens",
+"aliases": [
+"HR 3572",
+"alf Cnc",
+"Alpha Cnc"
+],
+"kind": "star",
+"ra": 134.621684,
+"dec": 11.85768,
+"source": "IAU"
+},
+{
+"name": "Adhafera",
+"aliases": [
+"HR 4031",
+"zet Leo",
+"Zeta Leo"
+],
+"kind": "star",
+"ra": 154.172563,
+"dec": 23.417317,
+"source": "IAU"
+},
+{
+"name": "Adhara",
+"aliases": [
+"HR 2618",
+"eps CMa",
+"Epsilon CMa"
+],
+"kind": "star",
+"ra": 104.656453,
+"dec": -28.972086,
+"source": "IAU"
+},
+{
+"name": "Adhil",
+"aliases": [
+"HR 390",
+"ksi And",
+"Xi And"
+],
+"kind": "star",
+"ra": 20.585084,
+"dec": 45.528777,
+"source": "IAU"
+},
+{
+"name": "Ain",
+"aliases": [
+"HR 1409",
+"eps Tau",
+"Epsilon Tau"
+],
+"kind": "star",
+"ra": 67.154168,
+"dec": 19.180434,
+"source": "IAU",
+"query": "HR 1409"
+},
+{
+"name": "Ainalrami",
+"aliases": [
+"HR 7116",
+"nu1 Sgr",
+"Nu1 Sgr"
+],
+"kind": "star",
+"ra": 283.542409,
+"dec": -22.74484,
+"source": "IAU"
+},
+{
+"name": "Aladfar",
+"aliases": [
+"HR 7298",
+"eta Lyr",
+"Eta Lyr"
+],
+"kind": "star",
+"ra": 288.439535,
+"dec": 39.145966,
+"source": "IAU"
+},
+{
+"name": "Alasia",
+"aliases": [
+"HD 168746"
+],
+"kind": "star",
+"ra": 275.457428,
+"dec": -11.922681,
+"source": "IAU"
+},
+{
+"name": "Albaldah",
+"aliases": [
+"HR 7264",
+"pi Sgr",
+"Pi Sgr"
+],
+"kind": "star",
+"ra": 287.440971,
+"dec": -21.023614,
+"source": "IAU"
+},
+{
+"name": "Albali",
+"aliases": [
+"HR 7950",
+"eps Aqr",
+"Epsilon Aqr"
+],
+"kind": "star",
+"ra": 311.918957,
+"dec": -9.495777,
+"source": "IAU"
+},
+{
+"name": "Albireo",
+"aliases": [
+"HR 7417",
+"bet Cyg",
+"Beta Cyg"
+],
+"kind": "star",
+"ra": 292.680315,
+"dec": 27.959674,
+"source": "IAU"
+},
+{
+"name": "Alchiba",
+"aliases": [
+"HR 4623",
+"alf Crv",
+"Alpha Crv"
+],
+"kind": "star",
+"ra": 182.103405,
+"dec": -24.728876,
+"source": "IAU"
+},
+{
+"name": "Alcor",
+"aliases": [
+"HR 5062",
+"80 UMa"
+],
+"kind": "star",
+"ra": 201.306408,
+"dec": 54.98796,
+"source": "IAU"
+},
+{
+"name": "Alcyone",
+"aliases": [
+"HR 1165",
+"eta Tau",
+"Eta Tau"
+],
+"kind": "star",
+"ra": 56.871152,
+"dec": 24.105136,
+"source": "IAU"
+},
+{
+"name": "Aldebaran",
+"aliases": [
+"HR 1457",
+"alf Tau",
+"Alpha Tau"
+],
+"kind": "star",
+"ra": 68.980163,
+"dec": 16.509302,
+"source": "IAU"
+},
+{
+"name": "Alderamin",
+"aliases": [
+"HR 8162",
+"alf Cep",
+"Alpha Cep"
+],
+"kind": "star",
+"ra": 319.644885,
+"dec": 62.585574,
+"source": "IAU"
+},
+{
+"name": "Aldhanab",
+"aliases": [
+"HR 8353",
+"gam Gru",
+"Gamma Gru"
+],
+"kind": "star",
+"ra": 328.482151,
+"dec": -37.364872,
+"source": "IAU"
+},
+{
+"name": "Aldhibah",
+"aliases": [
+"HR 6396",
+"zet Dra",
+"Zeta Dra"
+],
+"kind": "star",
+"ra": 257.196616,
+"dec": 65.714645,
+"source": "IAU"
+},
+{
+"name": "Aldulfin",
+"aliases": [
+"HR 7852",
+"eps Del",
+"Epsilon Del"
+],
+"kind": "star",
+"ra": 308.30322,
+"dec": 11.303266,
+"source": "IAU"
+},
+{
+"name": "alf Cen A",
+"aliases": [
+"Alpha Centauri"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 219.902058,
+"dec": -60.833993
+},
+{
+"name": "Alfirk",
+"aliases": [
+"HR 8238",
+"bet Cep",
+"Beta Cep"
+],
+"kind": "star",
+"ra": 322.164987,
+"dec": 70.560715,
+"source": "IAU"
+},
+{
+"name": "Algedi",
+"aliases": [
+"HR 7754",
+"alf2 Cap",
+"Alpha2 Cap"
+],
+"kind": "star",
+"ra": 304.513565,
+"dec": -12.544852,
+"source": "IAU"
+},
+{
+"name": "Algenib",
+"aliases": [
+"HR 39",
+"gam Peg",
+"Gamma Peg"
+],
+"kind": "star",
+"ra": 3.308968,
+"dec": 15.183598,
+"source": "IAU"
+},
+{
+"name": "Algieba",
+"aliases": [
+"HR 4057",
+"gam1 Leo",
+"Gamma1 Leo"
+],
+"kind": "star",
+"ra": 154.993127,
+"dec": 19.841485,
+"source": "IAU"
+},
+{
+"name": "Algol",
+"aliases": [
+"HR 936",
+"bet Per",
+"Beta Per"
+],
+"kind": "star",
+"ra": 47.042219,
+"dec": 40.955647,
+"source": "IAU"
+},
+{
+"name": "Algorab",
+"aliases": [
+"HR 4757",
+"del Crv",
+"Delta Crv"
+],
+"kind": "star",
+"ra": 187.466063,
+"dec": -16.515431,
+"source": "IAU"
+},
+{
+"name": "Alhena",
+"aliases": [
+"HR 2421",
+"gam Gem",
+"Gamma Gem"
+],
+"kind": "star",
+"ra": 99.42796,
+"dec": 16.39928,
+"source": "IAU"
+},
+{
+"name": "Alioth",
+"aliases": [
+"HR 4905",
+"eps UMa",
+"Epsilon UMa"
+],
+"kind": "star",
+"ra": 193.50729,
+"dec": 55.959823,
+"source": "IAU"
+},
+{
+"name": "Aljanah",
+"aliases": [
+"HR 7949",
+"eps Cyg",
+"Epsilon Cyg"
+],
+"kind": "star",
+"ra": 311.552801,
+"dec": 33.970328,
+"source": "IAU"
+},
+{
+"name": "Alkaid",
+"aliases": [
+"HR 5191",
+"eta UMa",
+"Eta UMa"
+],
+"kind": "star",
+"ra": 206.885157,
+"dec": 49.313267,
+"source": "IAU"
+},
+{
+"name": "Alkalurops",
+"aliases": [
+"HR 5733",
+"mu1 Boo",
+"Mu1 Boo"
+],
+"kind": "star",
+"ra": 231.122631,
+"dec": 37.377156,
+"source": "IAU"
+},
+{
+"name": "Alkaphrah",
+"aliases": [
+"HR 3594",
+"kap UMa",
+"Kappa UMa"
+],
+"kind": "star",
+"ra": 135.906365,
+"dec": 47.156525,
+"source": "IAU"
+},
+{
+"name": "Alkarab",
+"aliases": [
+"HR 8905",
+"ups Peg",
+"Upsilon Peg"
+],
+"kind": "star",
+"ra": 351.344929,
+"dec": 23.404101,
+"source": "IAU"
+},
+{
+"name": "Alkes",
+"aliases": [
+"HR 4287",
+"alf Crt",
+"Alpha Crt"
+],
+"kind": "star",
+"ra": 164.943605,
+"dec": -18.298786,
+"source": "IAU"
+},
+{
+"name": "Almaaz",
+"aliases": [
+"HR 1605",
+"eps Aur",
+"Epsilon Aur"
+],
+"kind": "star",
+"ra": 75.492227,
+"dec": 43.82331,
+"source": "IAU"
+},
+{
+"name": "Almach",
+"aliases": [
+"HR 603",
+"gam And",
+"Gamma And"
+],
+"kind": "star",
+"ra": 30.974801,
+"dec": 42.329728,
+"source": "IAU"
+},
+{
+"name": "Alnair",
+"aliases": [
+"HR 8425",
+"alf Gru",
+"Alpha Gru"
+],
+"kind": "star",
+"ra": 332.05827,
+"dec": -46.960974,
+"source": "IAU"
+},
+{
+"name": "Alnasl",
+"aliases": [
+"HR 6746",
+"gam2 Sgr",
+"Gamma2 Sgr"
+],
+"kind": "star",
+"ra": 271.452034,
+"dec": -30.42409,
+"source": "IAU"
+},
+{
+"name": "Alnilam",
+"aliases": [
+"HR 1903",
+"eps Ori",
+"Epsilon Ori"
+],
+"kind": "star",
+"ra": 84.053389,
+"dec": -1.201919,
+"source": "IAU"
+},
+{
+"name": "Alnitak",
+"aliases": [
+"HR 1948",
+"zet Ori",
+"Zeta Ori"
+],
+"kind": "star",
+"ra": 85.189694,
+"dec": -1.942574,
+"source": "IAU"
+},
+{
+"name": "Alniyat",
+"aliases": [
+"HR 6084",
+"sig Sco",
+"Sigma Sco"
+],
+"kind": "star",
+"ra": 245.297149,
+"dec": -25.592792,
+"source": "IAU"
+},
+{
+"name": "Alphard",
+"aliases": [
+"HR 3748",
+"alf Hya",
+"Alpha Hya"
+],
+"kind": "star",
+"ra": 141.896845,
+"dec": -8.6586,
+"source": "IAU"
+},
+{
+"name": "Alphecca",
+"aliases": [
+"HR 5793",
+"alf CrB",
+"Alpha CrB"
+],
+"kind": "star",
+"ra": 233.671952,
+"dec": 26.714685,
+"source": "IAU"
+},
+{
+"name": "Alpheratz",
+"aliases": [
+"HR 15",
+"alf And",
+"Alpha And"
+],
+"kind": "star",
+"ra": 2.096916,
+"dec": 29.090431,
+"source": "IAU"
+},
+{
+"name": "Alpherg",
+"aliases": [
+"HR 437",
+"eta Psc",
+"Eta Psc"
+],
+"kind": "star",
+"ra": 22.870867,
+"dec": 15.345832,
+"source": "IAU"
+},
+{
+"name": "Alrakis",
+"aliases": [
+"HR 6370",
+"mu Dra",
+"Mu Dra"
+],
+"kind": "star",
+"ra": 256.33385,
+"dec": 54.470028,
+"source": "IAU"
+},
+{
+"name": "Alrescha",
+"aliases": [
+"HR 596",
+"alf Psc",
+"Alpha Psc"
+],
+"kind": "star",
+"ra": 30.511749,
+"dec": 2.763761,
+"source": "IAU"
+},
+{
+"name": "Alruba",
+"aliases": [
+"HR 6618"
+],
+"kind": "star",
+"ra": 265.996537,
+"dec": 53.801707,
+"source": "IAU"
+},
+{
+"name": "Alsafi",
+"aliases": [
+"HR 7462",
+"sig Dra",
+"Sigma Dra"
+],
+"kind": "star",
+"ra": 293.089959,
+"dec": 69.661177,
+"source": "IAU"
+},
+{
+"name": "Alsciaukat",
+"aliases": [
+"HR 3275",
+"31 Lyn"
+],
+"kind": "star",
+"ra": 125.708789,
+"dec": 43.188131,
+"source": "IAU"
+},
+{
+"name": "Alsephina",
+"aliases": [
+"HR 3485",
+"del Vel",
+"Delta Vel"
+],
+"kind": "star",
+"ra": 131.175943,
+"dec": -54.708821,
+"source": "IAU"
+},
+{
+"name": "Alshain",
+"aliases": [
+"HR 7602",
+"bet Aql",
+"Beta Aql"
+],
+"kind": "star",
+"ra": 298.828304,
+"dec": 6.406764,
+"source": "IAU"
+},
+{
+"name": "Alshat",
+"aliases": [
+"HR 7773",
+"nu Cap",
+"Nu Cap"
+],
+"kind": "star",
+"ra": 305.165899,
+"dec": -12.759081,
+"source": "IAU"
+},
+{
+"name": "Altair",
+"aliases": [
+"HR 7557",
+"alf Aql",
+"Alpha Aql"
+],
+"kind": "star",
+"ra": 297.695827,
+"dec": 8.868321,
+"source": "IAU"
+},
+{
+"name": "Altais",
+"aliases": [
+"HR 7310",
+"del Dra",
+"Delta Dra"
+],
+"kind": "star",
+"ra": 288.138756,
+"dec": 67.661539,
+"source": "IAU"
+},
+{
+"name": "Alterf",
+"aliases": [
+"HR 3773",
+"lam Leo",
+"Lambda Leo"
+],
+"kind": "star",
+"ra": 142.930124,
+"dec": 22.967981,
+"source": "IAU"
+},
+{
+"name": "Aludra",
+"aliases": [
+"HR 2827",
+"eta CMa",
+"Eta CMa"
+],
+"kind": "star",
+"ra": 111.02376,
+"dec": -29.303106,
+"source": "IAU"
+},
+{
+"name": "Alula Australis",
+"aliases": [
+"HR 4375",
+"ksi UMa",
+"Xi UMa"
+],
+"kind": "star",
+"ra": 169.54555,
+"dec": 31.529289,
+"source": "IAU"
+},
+{
+"name": "Alula Borealis",
+"aliases": [
+"HR 4377",
+"nu UMa",
+"Nu UMa"
+],
+"kind": "star",
+"ra": 169.619738,
+"dec": 33.094306,
+"source": "IAU"
+},
+{
+"name": "Alya",
+"aliases": [
+"HR 7141",
+"tet1 Ser",
+"Theta1 Ser"
+],
+"kind": "star",
+"ra": 284.054917,
+"dec": 4.203583,
+"source": "IAU"
+},
+{
+"name": "Alzirr",
+"aliases": [
+"HR 2484",
+"ksi Gem",
+"Xi Gem"
+],
+"kind": "star",
+"ra": 101.322352,
+"dec": 12.895595,
+"source": "IAU"
+},
+{
+"name": "Amadioha",
+"aliases": [
+"HD 43197"
+],
+"kind": "star",
+"ra": 93.39859,
+"dec": -29.897264,
+"source": "IAU"
+},
+{
+"name": "Amansinaya",
+"aliases": [
+"WASP-34"
+],
+"kind": "star",
+"ra": 165.399574,
+"dec": -23.860663,
+"source": "IAU"
+},
+{
+"name": "Anadolu",
+"aliases": [
+"WASP-52"
+],
+"kind": "star",
+"ra": 348.494823,
+"dec": 8.76127,
+"source": "IAU"
+},
+{
+"name": "Ancha",
+"aliases": [
+"HR 8499",
+"tet Aqr",
+"Theta Aqr"
+],
+"kind": "star",
+"ra": 334.208486,
+"dec": -7.783289,
+"source": "IAU"
+},
+{
+"name": "Angetenar",
+"aliases": [
+"HR 850",
+"tau2 Eri",
+"Tau2 Eri"
+],
+"kind": "star",
+"ra": 42.759696,
+"dec": -21.004012,
+"source": "IAU"
+},
+{
+"name": "Aniara",
+"aliases": [
+"HD 102956"
+],
+"kind": "star",
+"ra": 177.843795,
+"dec": 57.640734,
+"source": "IAU"
+},
+{
+"name": "Ankaa",
+"aliases": [
+"HR 99",
+"alf Phe",
+"Alpha Phe"
+],
+"kind": "star",
+"ra": 6.571048,
+"dec": -42.305987,
+"source": "IAU"
+},
+{
+"name": "Anser",
+"aliases": [
+"HR 7405",
+"alf Vul",
+"Alpha Vul"
+],
+"kind": "star",
+"ra": 292.176375,
+"dec": 24.664906,
+"source": "IAU"
+},
+{
+"name": "Antares",
+"aliases": [
+"HR 6134",
+"alf Sco",
+"Alpha Sco"
+],
+"kind": "star",
+"ra": 247.351915,
+"dec": -26.432003,
+"source": "IAU"
+},
+{
+"name": "Arcalis",
+"aliases": [
+"HD 131496"
+],
+"kind": "star",
+"ra": 223.345951,
+"dec": 18.235408,
+"source": "IAU"
+},
+{
+"name": "Arcturus",
+"aliases": [
+"HR 5340",
+"alf Boo",
+"Alpha Boo"
+],
+"kind": "star",
+"ra": 213.9153,
+"dec": 19.182409,
+"source": "IAU"
+},
+{
+"name": "Arkab Posterior",
+"aliases": [
+"HR 7343",
+"bet2 Sgr",
+"Beta2 Sgr"
+],
+"kind": "star",
+"ra": 290.80474,
+"dec": -44.799779,
+"source": "IAU"
+},
+{
+"name": "Arkab Prior",
+"aliases": [
+"HR 7337",
+"bet1 Sgr",
+"Beta1 Sgr"
+],
+"kind": "star",
+"ra": 290.65958,
+"dec": -44.458958,
+"source": "IAU"
+},
+{
+"name": "Arneb",
+"aliases": [
+"HR 1865",
+"alf Lep",
+"Alpha Lep"
+],
+"kind": "star",
+"ra": 83.182567,
+"dec": -17.822289,
+"source": "IAU"
+},
+{
+"name": "Ascella",
+"aliases": [
+"HR 7194",
+"zet Sgr",
+"Zeta Sgr"
+],
+"kind": "star",
+"ra": 285.653043,
+"dec": -29.880063,
+"source": "IAU"
+},
+{
+"name": "Asellus Australis",
+"aliases": [
+"HR 3461",
+"del Cnc",
+"Delta Cnc"
+],
+"kind": "star",
+"ra": 131.171247,
+"dec": 18.154308,
+"source": "IAU"
+},
+{
+"name": "Asellus Borealis",
+"aliases": [
+"HR 3449",
+"gam Cnc",
+"Gamma Cnc"
+],
+"kind": "star",
+"ra": 130.821446,
+"dec": 21.468499,
+"source": "IAU"
+},
+{
+"name": "Ashlesha",
+"aliases": [
+"HR 3482",
+"eps Hya",
+"Epsilon Hya"
+],
+"kind": "star",
+"ra": 131.693801,
+"dec": 6.418802,
+"source": "IAU"
+},
+{
+"name": "Aspidiske",
+"aliases": [
+"HR 3699",
+"iot Car",
+"Iota Car"
+],
+"kind": "star",
+"ra": 139.272529,
+"dec": -59.275232,
+"source": "IAU"
+},
+{
+"name": "Asterope",
+"aliases": [
+"HR 1151",
+"21 Tau"
+],
+"kind": "star",
+"ra": 56.476985,
+"dec": 24.55451,
+"source": "IAU"
+},
+{
+"name": "Atakoraka",
+"aliases": [
+"WASP-64"
+],
+"kind": "star",
+"ra": 101.115021,
+"dec": -32.858383,
+"source": "IAU"
+},
+{
+"name": "Athebyne",
+"aliases": [
+"HR 6132",
+"eta Dra",
+"Eta Dra"
+],
+"kind": "star",
+"ra": 245.99786,
+"dec": 61.51421,
+"source": "IAU"
+},
+{
+"name": "Atik",
+"aliases": [
+"HR 1131",
+"omi Per",
+"Omicron Per"
+],
+"kind": "star",
+"ra": 56.079724,
+"dec": 32.288246,
+"source": "IAU"
+},
+{
+"name": "Atlas",
+"aliases": [
+"HR 1178",
+"27 Tau"
+],
+"kind": "star",
+"ra": 57.290596,
+"dec": 24.053417,
+"source": "IAU"
+},
+{
+"name": "Atria",
+"aliases": [
+"HR 6217",
+"alf TrA",
+"Alpha TrA"
+],
+"kind": "star",
+"ra": 252.16623,
+"dec": -69.027712,
+"source": "IAU"
+},
+{
+"name": "Avior",
+"aliases": [
+"HR 3307",
+"eps Car",
+"Epsilon Car"
+],
+"kind": "star",
+"ra": 125.62848,
+"dec": -59.509484,
+"source": "IAU"
+},
+{
+"name": "Axolotl",
+"aliases": [
+"HD 224693"
+],
+"kind": "star",
+"ra": 359.974299,
+"dec": -22.428116,
+"source": "IAU"
+},
+{
+"name": "Ayeyarwady",
+"aliases": [
+"HD 18742"
+],
+"kind": "star",
+"ra": 45.044402,
+"dec": -20.802605,
+"source": "IAU"
+},
+{
+"name": "Azelfafage",
+"aliases": [
+"HR 8301",
+"pi1 Cyg",
+"Pi1 Cyg"
+],
+"kind": "star",
+"ra": 325.523586,
+"dec": 51.189628,
+"source": "IAU"
+},
+{
+"name": "Azha",
+"aliases": [
+"HR 874",
+"eta Eri",
+"Eta Eri"
+],
+"kind": "star",
+"ra": 44.106872,
+"dec": -8.898143,
+"source": "IAU"
+},
+{
+"name": "Azmidi",
+"aliases": [
+"HR 3045",
+"ksi Pup",
+"Xi Pup"
+],
+"kind": "star",
+"ra": 117.323556,
+"dec": -24.859784,
+"source": "IAU"
+},
+{
+"name": "Baekdu",
+"aliases": [
+"HD 133086",
+"8 UMi"
+],
+"kind": "star",
+"ra": 224.201468,
+"dec": 74.900923,
+"source": "IAU"
+},
+{
+"name": "Barnard's Star",
+"aliases": [
+"GJ 699",
+"V2500 Oph"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 269.452077,
+"dec": 4.693365
+},
+{
+"name": "Baten Kaitos",
+"aliases": [
+"HR 539",
+"zet Cet",
+"Zeta Cet"
+],
+"kind": "star",
+"ra": 27.865131,
+"dec": -10.335031,
+"source": "IAU"
+},
+{
+"name": "Beemim",
+"aliases": [
+"HR 1393",
+"ups3 Eri",
+"Upsilon3 Eri"
+],
+"kind": "star",
+"ra": 66.009193,
+"dec": -34.01685,
+"source": "IAU"
+},
+{
+"name": "Beid",
+"aliases": [
+"HR 1298",
+"omi1 Eri",
+"Omicron1 Eri"
+],
+"kind": "star",
+"ra": 62.966413,
+"dec": -6.83758,
+"source": "IAU"
+},
+{
+"name": "Belel",
+"aliases": [
+"HD 181342"
+],
+"kind": "star",
+"ra": 290.267627,
+"dec": -23.619569,
+"source": "IAU"
+},
+{
+"name": "Belenos",
+"aliases": [
+"HD 8574"
+],
+"kind": "star",
+"ra": 21.302149,
+"dec": 28.566695,
+"source": "IAU"
+},
+{
+"name": "Bellatrix",
+"aliases": [
+"HR 1790",
+"gam Ori",
+"Gamma Ori"
+],
+"kind": "star",
+"ra": 81.282764,
+"dec": 6.349703,
+"source": "IAU"
+},
+{
+"name": "Berehynia",
+"aliases": [
+"HAT-P-15"
+],
+"kind": "star",
+"ra": 66.248063,
+"dec": 39.460642,
+"source": "IAU"
+},
+{
+"name": "Betelgeuse",
+"aliases": [
+"HR 2061",
+"alf Ori",
+"Alpha Ori"
+],
+"kind": "star",
+"ra": 88.792939,
+"dec": 7.407064,
+"source": "IAU"
+},
+{
+"name": "Bharani",
+"aliases": [
+"HR 838",
+"41 Ari"
+],
+"kind": "star",
+"ra": 42.495972,
+"dec": 27.260507,
+"source": "IAU"
+},
+{
+"name": "Bibha",
+"aliases": [
+"HD 86081"
+],
+"kind": "star",
+"ra": 149.02466,
+"dec": -3.808424,
+"source": "IAU"
+},
+{
+"name": "Biham",
+"aliases": [
+"HR 8450",
+"tet Peg",
+"Theta Peg"
+],
+"kind": "star",
+"ra": 332.549953,
+"dec": 6.197922,
+"source": "IAU"
+},
+{
+"name": "Bosona",
+"aliases": [
+"HD 206610"
+],
+"kind": "star",
+"ra": 325.85375,
+"dec": -7.408253,
+"source": "IAU"
+},
+{
+"name": "Botein",
+"aliases": [
+"HR 951",
+"del Ari",
+"Delta Ari"
+],
+"kind": "star",
+"ra": 47.907361,
+"dec": 19.726673,
+"source": "IAU"
+},
+{
+"name": "Brachium",
+"aliases": [
+"HR 5603",
+"sig Lib",
+"Sigma Lib"
+],
+"kind": "star",
+"ra": 226.017562,
+"dec": -25.28197,
+"source": "IAU"
+},
+{
+"name": "Bubup",
+"aliases": [
+"HD 38283"
+],
+"kind": "star",
+"ra": 84.258403,
+"dec": -73.699346,
+"source": "IAU"
+},
+{
+"name": "Buna",
+"aliases": [
+"HD 16175"
+],
+"kind": "star",
+"ra": 39.257963,
+"dec": 42.06263,
+"source": "IAU"
+},
+{
+"name": "Bunda",
+"aliases": [
+"HR 8264",
+"ksi Aqr",
+"Xi Aqr"
+],
+"kind": "star",
+"ra": 324.437957,
+"dec": -7.854202,
+"source": "IAU"
+},
+{
+"name": "Canopus",
+"aliases": [
+"HR 2326",
+"alf Car",
+"Alpha Car"
+],
+"kind": "star",
+"ra": 95.987958,
+"dec": -52.695661,
+"source": "IAU"
+},
+{
+"name": "Capella",
+"aliases": [
+"HR 1708",
+"alf Aur",
+"Alpha Aur"
+],
+"kind": "star",
+"ra": 79.172328,
+"dec": 45.997991,
+"source": "IAU"
+},
+{
+"name": "Caph",
+"aliases": [
+"HR 21",
+"bet Cas",
+"Beta Cas"
+],
+"kind": "star",
+"ra": 2.294522,
+"dec": 59.149781,
+"source": "IAU"
+},
+{
+"name": "Castor",
+"aliases": [
+"HR 2891",
+"alf Gem",
+"Alpha Gem"
+],
+"kind": "star",
+"ra": 113.649472,
+"dec": 31.888282,
+"source": "IAU"
+},
+{
+"name": "Castula",
+"aliases": [
+"HR 265",
+"ups2 Cas",
+"Upsilon2 Cas"
+],
+"kind": "star",
+"ra": 14.166271,
+"dec": 59.181057,
+"source": "IAU"
+},
+{
+"name": "Cebalrai",
+"aliases": [
+"HR 6603",
+"bet Oph",
+"Beta Oph"
+],
+"kind": "star",
+"ra": 265.868133,
+"dec": 4.567304,
+"source": "IAU"
+},
+{
+"name": "Ceibo",
+"aliases": [
+"HD 63454"
+],
+"kind": "star",
+"ra": 114.841054,
+"dec": -78.278974,
+"source": "IAU"
+},
+{
+"name": "Celaeno",
+"aliases": [
+"HR 1140",
+"16 Tau"
+],
+"kind": "star",
+"ra": 56.200896,
+"dec": 24.289468,
+"source": "IAU"
+},
+{
+"name": "Cervantes",
+"aliases": [
+"HR 6585",
+"mu Ara",
+"Mu Ara"
+],
+"kind": "star",
+"ra": 266.036263,
+"dec": -51.834053,
+"source": "IAU"
+},
+{
+"name": "Chalawan",
+"aliases": [
+"HR 4277",
+"47 UMa"
+],
+"kind": "star",
+"ra": 164.866553,
+"dec": 40.430256,
+"source": "IAU"
+},
+{
+"name": "Chamukuy",
+"aliases": [
+"HR 1412",
+"tet2 Tau",
+"Theta2 Tau"
+],
+"kind": "star",
+"ra": 67.16559,
+"dec": 15.870875,
+"source": "IAU"
+},
+{
+"name": "Chaophraya",
+"aliases": [
+"WASP-50"
+],
+"kind": "star",
+"ra": 43.688059,
+"dec": -10.898063,
+"source": "IAU"
+},
+{
+"name": "Chara",
+"aliases": [
+"HR 4785",
+"bet CVn",
+"Beta CVn"
+],
+"kind": "star",
+"ra": 188.435601,
+"dec": 41.357478,
+"source": "IAU"
+},
+{
+"name": "Chason",
+"aliases": [
+"HAT-P-5"
+],
+"kind": "star",
+"ra": 274.40547,
+"dec": 36.621436,
+"source": "IAU"
+},
+{
+"name": "Chechia",
+"aliases": [
+"HD 192699"
+],
+"kind": "star",
+"ra": 304.025016,
+"dec": 4.580794,
+"source": "IAU"
+},
+{
+"name": "Chertan",
+"aliases": [
+"HR 4359",
+"tet Leo",
+"Theta Leo"
+],
+"kind": "star",
+"ra": 168.560024,
+"dec": 15.429571,
+"source": "IAU"
+},
+{
+"name": "chi Cyg",
+"aliases": [
+"Chi Cygni"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 297.641339,
+"dec": 32.914049
+},
+{
+"name": "Citadelle",
+"aliases": [
+"HD 1502"
+],
+"kind": "star",
+"ra": 4.821108,
+"dec": 14.054756,
+"source": "IAU"
+},
+{
+"name": "Citala",
+"aliases": [
+"HD 52265"
+],
+"kind": "star",
+"ra": 105.075149,
+"dec": -5.367161,
+"source": "IAU"
+},
+{
+"name": "Cocibolca",
+"aliases": [
+"HD 4208"
+],
+"kind": "star",
+"ra": 11.111044,
+"dec": -26.515682,
+"source": "IAU"
+},
+{
+"name": "Copernicus",
+"aliases": [
+"HR 3522",
+"55 Cnc"
+],
+"kind": "star",
+"ra": 133.149213,
+"dec": 28.330821,
+"source": "IAU"
+},
+{
+"name": "Cor Caroli",
+"aliases": [
+"HR 4915",
+"alf2 CVn",
+"Alpha2 CVn"
+],
+"kind": "star",
+"ra": 194.00694,
+"dec": 38.318376,
+"source": "IAU"
+},
+{
+"name": "Cujam",
+"aliases": [
+"HR 6117",
+"ome Her",
+"Omega Her"
+],
+"kind": "star",
+"ra": 246.353978,
+"dec": 14.033267,
+"source": "IAU"
+},
+{
+"name": "Cursa",
+"aliases": [
+"HR 1666",
+"bet Eri",
+"Beta Eri"
+],
+"kind": "star",
+"ra": 76.962395,
+"dec": -5.086497,
+"source": "IAU"
+},
+{
+"name": "CW Leo",
+"aliases": [
+"IRC +10216"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 146.989193,
+"dec": 13.278768
+},
+{
+"name": "Cyg X-1",
+"aliases": [
+"Cygnus X-1"
+],
+"kind": "other",
+"source": "extra",
+"ra": 299.590316,
+"dec": 35.201607
+},
+{
+"name": "Dabih",
+"aliases": [
+"HR 7776",
+"bet1 Cap",
+"Beta1 Cap"
+],
+"kind": "star",
+"ra": 305.252777,
+"dec": -14.781408,
+"source": "IAU"
+},
+{
+"name": "Dalim",
+"aliases": [
+"HR 963",
+"alf For",
+"Alpha For"
+],
+"kind": "star",
+"ra": 48.018874,
+"dec": -28.987622,
+"source": "IAU"
+},
+{
+"name": "del Cep",
+"aliases": [
+"Delta Cephei"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 337.292761,
+"dec": 58.415194
+},
+{
+"name": "Deneb",
+"aliases": [
+"HR 7924",
+"alf Cyg",
+"Alpha Cyg"
+],
+"kind": "star",
+"ra": 310.35798,
+"dec": 45.280339,
+"source": "IAU"
+},
+{
+"name": "Deneb Algedi",
+"aliases": [
+"HR 8322",
+"del Cap",
+"Delta Cap"
+],
+"kind": "star",
+"ra": 326.760184,
+"dec": -16.127287,
+"source": "IAU"
+},
+{
+"name": "Denebola",
+"aliases": [
+"HR 4534",
+"bet Leo",
+"Beta Leo"
+],
+"kind": "star",
+"ra": 177.26491,
+"dec": 14.572058,
+"source": "IAU"
+},
+{
+"name": "DG Tau",
+"aliases": [],
+"kind": "variable",
+"source": "extra",
+"ra": 66.769551,
+"dec": 26.104461
+},
+{
+"name": "Diadem",
+"aliases": [
+"HR 4968",
+"alf Com",
+"Alpha Com"
+],
+"kind": "star",
+"ra": 197.497022,
+"dec": 17.529455,
+"source": "IAU"
+},
+{
+"name": "Dingolay",
+"aliases": [
+"HD 96063"
+],
+"kind": "star",
+"ra": 166.185229,
+"dec": -2.513219,
+"source": "IAU"
+},
+{
+"name": "Diphda",
+"aliases": [
+"HR 188",
+"bet Cet",
+"Beta Cet"
+],
+"kind": "star",
+"ra": 10.897379,
+"dec": -17.986606,
+"source": "IAU"
+},
+{
+"name": "Diwo",
+"aliases": [
+"WASP-17"
+],
+"kind": "star",
+"ra": 239.962288,
+"dec": -28.061754,
+"source": "IAU"
+},
+{
+"name": "Diya",
+"aliases": [
+"WASP-72"
+],
+"kind": "star",
+"ra": 41.04004,
+"dec": -30.169045,
+"source": "IAU"
+},
+{
+"name": "Dofida",
+"aliases": [
+"HD 117618"
+],
+"kind": "star",
+"ra": 203.106482,
+"dec": -47.271365,
+"source": "IAU"
+},
+{
+"name": "Dombay",
+"aliases": [
+"HAT-P-3"
+],
+"kind": "star",
+"ra": 206.094141,
+"dec": 48.028668,
+"source": "IAU"
+},
+{
+"name": "Dschubba",
+"aliases": [
+"HR 5953",
+"del Sco",
+"Delta Sco"
+],
+"kind": "star",
+"ra": 240.083355,
+"dec": -22.621706,
+"source": "IAU"
+},
+{
+"name": "Dubhe",
+"aliases": [
+"HR 4301",
+"alf UMa",
+"Alpha UMa"
+],
+"kind": "star",
+"ra": 165.931965,
+"dec": 61.751035,
+"source": "IAU"
+},
+{
+"name": "Dziban",
+"aliases": [
+"HR 6636",
+"psi1 Dra",
+"Psi1 Dra"
+],
+"kind": "star",
+"ra": 265.483593,
+"dec": 72.148869,
+"source": "IAU"
+},
+{
+"name": "Ebla",
+"aliases": [
+"HD 218566"
+],
+"kind": "star",
+"ra": 347.294696,
+"dec": -2.260745,
+"source": "IAU"
+},
+{
+"name": "Edasich",
+"aliases": [
+"HR 5744",
+"iot Dra",
+"Iota Dra"
+],
+"kind": "star",
+"ra": 231.232391,
+"dec": 58.966066,
+"source": "IAU"
+},
+{
+"name": "Electra",
+"aliases": [
+"HR 1142",
+"17 Tau"
+],
+"kind": "star",
+"ra": 56.218905,
+"dec": 24.113338,
+"source": "IAU"
+},
+{
+"name": "Elgafar",
+"aliases": [
+"HR 5409",
+"phi Vir",
+"Phi Vir"
+],
+"kind": "star",
+"ra": 217.050579,
+"dec": -2.227958,
+"source": "IAU"
+},
+{
+"name": "Elkurud",
+"aliases": [
+"HR 2177",
+"tet Col",
+"Theta Col"
+],
+"kind": "star",
+"ra": 91.881803,
+"dec": -37.252919,
+"source": "IAU"
+},
+{
+"name": "Elnath",
+"aliases": [
+"HR 1791",
+"bet Tau",
+"Beta Tau"
+],
+"kind": "star",
+"ra": 81.572971,
+"dec": 28.607452,
+"source": "IAU"
+},
+{
+"name": "Eltanin",
+"aliases": [
+"HR 6705",
+"gam Dra",
+"Gamma Dra"
+],
+"kind": "star",
+"ra": 269.151541,
+"dec": 51.488896,
+"source": "IAU"
+},
+{
+"name": "Emiw",
+"aliases": [
+"HD 7199"
+],
+"kind": "star",
+"ra": 17.696754,
+"dec": -66.188163,
+"source": "IAU"
+},
+{
+"name": "Enif",
+"aliases": [
+"HR 8308",
+"eps Peg",
+"Epsilon Peg"
+],
+"kind": "star",
+"ra": 326.046484,
+"dec": 9.875009,
+"source": "IAU"
+},
+{
+"name": "eps Eri",
+"aliases": [
+"Epsilon Eridani"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 53.232685,
+"dec": -9.458261
+},
+{
+"name": "eps Ind A",
+"aliases": [
+"Epsilon Indi"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 330.840223,
+"dec": -56.785979,
+"query": "Epsilon Indi"
+},
+{
+"name": "eps Ind B",
+"aliases": [
+"Epsilon Indi B"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 331.044147,
+"dec": -56.782844
+},
+{
+"name": "Errai",
+"aliases": [
+"HR 8974",
+"gam Cep",
+"Gamma Cep"
+],
+"kind": "star",
+"ra": 354.837127,
+"dec": 77.632364,
+"source": "IAU"
+},
+{
+"name": "eta Car",
+"aliases": [
+"Eta Carinae"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 161.264774,
+"dec": -59.684431
+},
+{
+"name": "EX Lup",
+"aliases": [
+"EX Lupi"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 240.772881,
+"dec": -40.307063
+},
+{
+"name": "Fafnir",
+"aliases": [
+"HR 6945",
+"42 Dra"
+],
+"kind": "star",
+"ra": 276.496404,
+"dec": 65.563481,
+"source": "IAU"
+},
+{
+"name": "Fang",
+"aliases": [
+"HR 5944",
+"pi Sco",
+"Pi Sco"
+],
+"kind": "star",
+"ra": 239.712972,
+"dec": -26.114108,
+"source": "IAU"
+},
+{
+"name": "Fawaris",
+"aliases": [
+"HR 7528",
+"del Cyg",
+"Delta Cyg"
+],
+"kind": "star",
+"ra": 296.243654,
+"dec": 45.130815,
+"source": "IAU"
+},
+{
+"name": "Felis",
+"aliases": [
+"HR 3923"
+],
+"kind": "star",
+"ra": 148.717519,
+"dec": -19.009339,
+"source": "IAU"
+},
+{
+"name": "Felixvarela",
+"aliases": [
+"BD-17 63"
+],
+"kind": "star",
+"ra": 7.142941,
+"dec": -16.226344,
+"source": "IAU"
+},
+{
+"name": "Flegetonte",
+"aliases": [
+"HD 102195"
+],
+"kind": "star",
+"ra": 176.42622,
+"dec": 2.821479,
+"source": "IAU"
+},
+{
+"name": "Fomalhaut",
+"aliases": [
+"HR 8728",
+"alf PsA",
+"Alpha PsA"
+],
+"kind": "star",
+"ra": 344.412693,
+"dec": -29.622237,
+"source": "IAU"
+},
+{
+"name": "Formosa",
+"aliases": [
+"HD 100655"
+],
+"kind": "star",
+"ra": 173.765638,
+"dec": 20.441545,
+"source": "IAU"
+},
+{
+"name": "Franz",
+"aliases": [
+"HAT-P-14"
+],
+"kind": "star",
+"ra": 260.116159,
+"dec": 38.242197,
+"source": "IAU"
+},
+{
+"name": "FU Ori",
+"aliases": [
+"FU Orionis"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 86.343187,
+"dec": 9.070081
+},
+{
+"name": "Fulu",
+"aliases": [
+"HR 153",
+"zet Cas",
+"Zeta Cas"
+],
+"kind": "star",
+"ra": 9.242852,
+"dec": 53.89691,
+"source": "IAU"
+},
+{
+"name": "Fumalsamakah",
+"aliases": [
+"HR 8773",
+"bet Psc",
+"Beta Psc"
+],
+"kind": "star",
+"ra": 345.969222,
+"dec": 3.820046,
+"source": "IAU"
+},
+{
+"name": "Funi",
+"aliases": [
+"HD 109246"
+],
+"kind": "star",
+"ra": 188.029948,
+"dec": 74.489547,
+"source": "IAU"
+},
+{
+"name": "Furud",
+"aliases": [
+"HR 2282",
+"zet CMa",
+"Zeta CMa"
+],
+"kind": "star",
+"ra": 95.0783,
+"dec": -30.063367,
+"source": "IAU"
+},
+{
+"name": "Fuyue",
+"aliases": [
+"HR 6630"
+],
+"kind": "star",
+"ra": 267.464504,
+"dec": -37.043276,
+"source": "IAU"
+},
+{
+"name": "Gacrux",
+"aliases": [
+"HR 4763",
+"gam Cru",
+"Gamma Cru"
+],
+"kind": "star",
+"ra": 187.791498,
+"dec": -57.113213,
+"source": "IAU"
+},
+{
+"name": "Gakyid",
+"aliases": [
+"HD 73534"
+],
+"kind": "star",
+"ra": 129.815846,
+"dec": 12.960374,
+"source": "IAU"
+},
+{
+"name": "Geminga",
+"aliases": [
+"PSR B0633+17"
+],
+"kind": "star",
+"ra": 98.475638,
+"dec": 17.770253,
+"source": "IAU"
+},
+{
+"name": "Giausar",
+"aliases": [
+"HR 4434",
+"lam Dra",
+"Lambda Dra"
+],
+"kind": "star",
+"ra": 172.850924,
+"dec": 69.331076,
+"source": "IAU"
+},
+{
+"name": "Gienah",
+"aliases": [
+"HR 4662",
+"gam Crv",
+"Gamma Crv"
+],
+"kind": "star",
+"ra": 183.951545,
+"dec": -17.54193,
+"source": "IAU"
+},
+{
+"name": "Ginan",
+"aliases": [
+"HR 4700",
+"eps Cru",
+"Epsilon Cru"
+],
+"kind": "star",
+"ra": 185.340034,
+"dec": -60.401148,
+"source": "IAU"
+},
+{
+"name": "GJ 1061",
+"aliases": [],
+"kind": "moving",
+"source": "extra",
+"ra": 53.998747,
+"dec": -44.512703
+},
+{
+"name": "GJ 1214",
+"aliases": [],
+"kind": "moving",
+"source": "extra",
+"ra": 258.828892,
+"dec": 4.963907
+},
+{
+"name": "GJ 436",
+"aliases": [],
+"kind": "moving",
+"source": "extra",
+"ra": 175.546222,
+"dec": 26.70657
+},
+{
+"name": "Gliese 229 B",
+"aliases": [
+"GJ 229 B"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 92.645,
+"dec": -21.866667
+},
+{
+"name": "Gliese 570 D",
+"aliases": [
+"GJ 570 D"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 224.312344,
+"dec": -21.363264
+},
+{
+"name": "Gloas",
+"aliases": [
+"WASP-13"
+],
+"kind": "star",
+"ra": 140.102977,
+"dec": 33.882416,
+"source": "IAU"
+},
+{
+"name": "Gomeisa",
+"aliases": [
+"HR 2845",
+"bet CMi",
+"Beta CMi"
+],
+"kind": "star",
+"ra": 111.787674,
+"dec": 8.289316,
+"source": "IAU"
+},
+{
+"name": "Groombridge 1830",
+"aliases": [
+"GJ 451"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 178.244864,
+"dec": 37.718682
+},
+{
+"name": "Groombridge 34",
+"aliases": [
+"GJ 15"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 4.595354,
+"dec": 44.022955
+},
+{
+"name": "Grumium",
+"aliases": [
+"HR 6688",
+"ksi Dra",
+"Xi Dra"
+],
+"kind": "star",
+"ra": 268.382206,
+"dec": 56.872642,
+"source": "IAU"
+},
+{
+"name": "Gudja",
+"aliases": [
+"HR 5879",
+"kap Ser",
+"Kappa Ser"
+],
+"kind": "star",
+"ra": 237.184905,
+"dec": 18.141565,
+"source": "IAU"
+},
+{
+"name": "Gumala",
+"aliases": [
+"HD 179949",
+"V5652 Sgr"
+],
+"kind": "star",
+"ra": 288.888459,
+"dec": -24.179353,
+"source": "IAU"
+},
+{
+"name": "Guniibuu",
+"aliases": [
+"HR 6402",
+"36 Oph"
+],
+"kind": "star",
+"ra": 258.837433,
+"dec": -26.602821,
+"source": "IAU"
+},
+{
+"name": "Hadar",
+"aliases": [
+"HR 5267",
+"bet Cen",
+"Beta Cen"
+],
+"kind": "star",
+"ra": 210.955856,
+"dec": -60.373035,
+"source": "IAU"
+},
+{
+"name": "Haedus",
+"aliases": [
+"HR 1641",
+"eta Aur",
+"Eta Aur"
+],
+"kind": "star",
+"ra": 76.628726,
+"dec": 41.234476,
+"source": "IAU"
+},
+{
+"name": "Hamal",
+"aliases": [
+"HR 617",
+"alf Ari",
+"Alpha Ari"
+],
+"kind": "star",
+"ra": 31.793357,
+"dec": 23.462418,
+"source": "IAU"
+},
+{
+"name": "Hassaleh",
+"aliases": [
+"HR 1577",
+"iot Aur",
+"Iota Aur"
+],
+"kind": "star",
+"ra": 74.248417,
+"dec": 33.166094,
+"source": "IAU"
+},
+{
+"name": "Hatysa",
+"aliases": [
+"HR 1899",
+"iot Ori",
+"Iota Ori"
+],
+"kind": "star",
+"ra": 83.858276,
+"dec": -5.909889,
+"source": "IAU"
+},
+{
+"name": "Helvetios",
+"aliases": [
+"HR 8729",
+"51 Peg"
+],
+"kind": "star",
+"ra": 344.366585,
+"dec": 20.768833,
+"source": "IAU"
+},
+{
+"name": "Heze",
+"aliases": [
+"HR 5107",
+"zet Vir",
+"Zeta Vir"
+],
+"kind": "star",
+"ra": 203.673297,
+"dec": -0.595816,
+"source": "IAU"
+},
+{
+"name": "Hoggar",
+"aliases": [
+"HD 28678"
+],
+"kind": "star",
+"ra": 67.856058,
+"dec": 4.575295,
+"source": "IAU"
+},
+{
+"name": "Homam",
+"aliases": [
+"HR 8634",
+"zet Peg",
+"Zeta Peg"
+],
+"kind": "star",
+"ra": 340.365503,
+"dec": 10.831363,
+"source": "IAU"
+},
+{
+"name": "Horna",
+"aliases": [
+"HAT-P-38"
+],
+"kind": "star",
+"ra": 35.383251,
+"dec": 32.246137,
+"source": "IAU"
+},
+{
+"name": "Hunahpu",
+"aliases": [
+"HD 98219"
+],
+"kind": "star",
+"ra": 169.448138,
+"dec": -23.975416,
+"source": "IAU"
+},
+{
+"name": "Hunor",
+"aliases": [
+"HAT-P-2"
+],
+"kind": "star",
+"ra": 245.15149,
+"dec": 41.048085,
+"source": "IAU"
+},
+{
+"name": "Iklil",
+"aliases": [
+"HR 5928",
+"rho Sco",
+"Rho Sco"
+],
+"kind": "star",
+"ra": 239.221155,
+"dec": -29.214074,
+"source": "IAU"
+},
+{
+"name": "Illyrian",
+"aliases": [
+"HD 82886"
+],
+"kind": "star",
+"ra": 143.938267,
+"dec": 34.780742,
+"source": "IAU"
+},
+{
+"name": "Imai",
+"aliases": [
+"HR 4656",
+"del Cru",
+"Delta Cru"
+],
+"kind": "star",
+"ra": 183.786327,
+"dec": -58.748924,
+"source": "IAU"
+},
+{
+"name": "Inquill",
+"aliases": [
+"HD 156411"
+],
+"kind": "star",
+"ra": 259.96417,
+"dec": -48.549322,
+"source": "IAU"
+},
+{
+"name": "Intan",
+"aliases": [
+"HD 20868"
+],
+"kind": "star",
+"ra": 50.17789,
+"dec": -33.730104,
+"source": "IAU"
+},
+{
+"name": "Intercrus",
+"aliases": [
+"HR 3743"
+],
+"kind": "star",
+"ra": 142.166619,
+"dec": 45.601481,
+"source": "IAU"
+},
+{
+"name": "Irena",
+"aliases": [
+"WASP-38"
+],
+"kind": "star",
+"ra": 243.959856,
+"dec": 10.032579,
+"source": "IAU"
+},
+{
+"name": "Itonda",
+"aliases": [
+"HD 208487"
+],
+"kind": "star",
+"ra": 329.332699,
+"dec": -37.763624,
+"source": "IAU"
+},
+{
+"name": "Izar",
+"aliases": [
+"HR 5506",
+"eps Boo",
+"Epsilon Boo"
+],
+"kind": "star",
+"ra": 221.24674,
+"dec": 27.074222,
+"source": "IAU"
+},
+{
+"name": "Jabbah",
+"aliases": [
+"HR 6027",
+"nu Sco",
+"Nu Sco"
+],
+"kind": "star",
+"ra": 242.998899,
+"dec": -19.460704,
+"source": "IAU"
+},
+{
+"name": "Jishui",
+"aliases": [
+"HR 2930",
+"omi Gem",
+"Omicron Gem"
+],
+"kind": "star",
+"ra": 114.791394,
+"dec": 34.584306,
+"source": "IAU"
+},
+{
+"name": "Kaffaljidhma",
+"aliases": [
+"HR 804",
+"gam Cet",
+"Gamma Cet"
+],
+"kind": "star",
+"ra": 40.825163,
+"dec": 3.235816,
+"source": "IAU"
+},
+{
+"name": "Kalausi",
+"aliases": [
+"HD 83443"
+],
+"kind": "star",
+"ra": 144.299281,
+"dec": -43.272204,
+"source": "IAU"
+},
+{
+"name": "Kamuy",
+"aliases": [
+"HD 145457"
+],
+"kind": "star",
+"ra": 242.51631,
+"dec": 26.742748,
+"source": "IAU"
+},
+{
+"name": "Kang",
+"aliases": [
+"HR 5315",
+"kap Vir",
+"Kappa Vir"
+],
+"kind": "star",
+"ra": 213.223937,
+"dec": -10.273703,
+"source": "IAU"
+},
+{
+"name": "Kapteyn's Star",
+"aliases": [
+"GJ 191"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 77.919124,
+"dec": -45.018434
+},
+{
+"name": "Karaka",
+"aliases": [
+"HD 137388"
+],
+"kind": "star",
+"ra": 233.91634,
+"dec": -80.204594,
+"source": "IAU"
+},
+{
+"name": "Kaus Australis",
+"aliases": [
+"HR 6879",
+"eps Sgr",
+"Epsilon Sgr"
+],
+"kind": "star",
+"ra": 276.042993,
+"dec": -34.384616,
+"source": "IAU"
+},
+{
+"name": "Kaus Borealis",
+"aliases": [
+"HR 6913",
+"lam Sgr",
+"Lambda Sgr"
+],
+"kind": "star",
+"ra": 276.99267,
+"dec": -25.421698,
+"source": "IAU"
+},
+{
+"name": "Kaus Media",
+"aliases": [
+"HR 6859",
+"del Sgr",
+"Delta Sgr"
+],
+"kind": "star",
+"ra": 275.248512,
+"dec": -29.828102,
+"source": "IAU"
+},
+{
+"name": "Kaveh",
+"aliases": [
+"HD 175541"
+],
+"kind": "star",
+"ra": 283.920351,
+"dec": 4.265324,
+"source": "IAU"
+},
+{
+"name": "Keid",
+"aliases": [
+"HR 1325",
+"omi2 Eri",
+"Omicron2 Eri"
+],
+"kind": "star",
+"ra": 63.817998,
+"dec": -7.65287,
+"source": "IAU"
+},
+{
+"name": "Khambalia",
+"aliases": [
+"HR 5359",
+"lam Vir",
+"Lambda Vir"
+],
+"kind": "star",
+"ra": 214.777469,
+"dec": -13.371091,
+"source": "IAU"
+},
+{
+"name": "Kitalpha",
+"aliases": [
+"HR 8131",
+"alf Equ",
+"Alpha Equ"
+],
+"kind": "star",
+"ra": 318.955988,
+"dec": 5.247892,
+"source": "IAU"
+},
+{
+"name": "Kochab",
+"aliases": [
+"HR 5563",
+"bet UMi",
+"Beta UMi"
+],
+"kind": "star",
+"ra": 222.676357,
+"dec": 74.155504,
+"source": "IAU"
+},
+{
+"name": "Koeia",
+"aliases": [
+"HIP 12961"
+],
+"kind": "star",
+"ra": 41.678696,
+"dec": -23.086612,
+"source": "IAU"
+},
+{
+"name": "Koit",
+"aliases": [
+"XO-4"
+],
+"kind": "star",
+"ra": 110.388168,
+"dec": 58.268086,
+"source": "IAU"
+},
+{
+"name": "Kornephoros",
+"aliases": [
+"HR 6148",
+"bet Her",
+"Beta Her"
+],
+"kind": "star",
+"ra": 247.555001,
+"dec": 21.489611,
+"source": "IAU"
+},
+{
+"name": "Kraz",
+"aliases": [
+"HR 4786",
+"bet Crv",
+"Beta Crv"
+],
+"kind": "star",
+"ra": 188.596812,
+"dec": -23.39676,
+"source": "IAU"
+},
+{
+"name": "Kurhah",
+"aliases": [
+"HR 8417",
+"ksi Cep",
+"Xi Cep"
+],
+"kind": "star",
+"ra": 330.947729,
+"dec": 64.627976,
+"source": "IAU"
+},
+{
+"name": "La Superba",
+"aliases": [
+"HR 4846",
+"Y CVn"
+],
+"kind": "star",
+"ra": 191.282609,
+"dec": 45.440257,
+"source": "IAU"
+},
+{
+"name": "Lacaille 8760",
+"aliases": [
+"AX Mic"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 319.313621,
+"dec": -38.867362
+},
+{
+"name": "Lacaille 9352",
+"aliases": [
+"GJ 887"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 346.466816,
+"dec": -35.853071
+},
+{
+"name": "Lalande 21185",
+"aliases": [
+"GJ 411"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 165.834145,
+"dec": 35.969882
+},
+{
+"name": "Larawag",
+"aliases": [
+"HR 6241",
+"eps Sco",
+"Epsilon Sco"
+],
+"kind": "star",
+"ra": 252.540878,
+"dec": -34.293232,
+"source": "IAU"
+},
+{
+"name": "Lerna",
+"aliases": [
+"HAT-P-42"
+],
+"kind": "star",
+"ra": 135.344372,
+"dec": 6.097226,
+"source": "IAU"
+},
+{
+"name": "Lesath",
+"aliases": [
+"HR 6508",
+"ups Sco",
+"Upsilon Sco"
+],
+"kind": "star",
+"ra": 262.690988,
+"dec": -37.295813,
+"source": "IAU"
+},
+{
+"name": "LHS 1140",
+"aliases": [],
+"kind": "moving",
+"source": "extra",
+"ra": 11.247212,
+"dec": -15.27154
+},
+{
+"name": "Libertas",
+"aliases": [
+"HR 7595",
+"ksi Aql",
+"Xi Aql"
+],
+"kind": "star",
+"ra": 298.562006,
+"dec": 8.461454,
+"source": "IAU"
+},
+{
+"name": "Lich",
+"aliases": [
+"PSR B1257+12"
+],
+"kind": "star",
+"ra": 195.012948,
+"dec": 12.681988,
+"source": "IAU"
+},
+{
+"name": "Liesma",
+"aliases": [
+"HD 118203"
+],
+"kind": "star",
+"ra": 203.510581,
+"dec": 53.728527,
+"source": "IAU"
+},
+{
+"name": "Lilii Borea",
+"aliases": [
+"HR 824",
+"39 Ari"
+],
+"kind": "star",
+"ra": 41.977259,
+"dec": 29.247118,
+"source": "IAU"
+},
+{
+"name": "Lionrock",
+"aliases": [
+"HD 212771"
+],
+"kind": "star",
+"ra": 336.7628,
+"dec": -17.263657,
+"source": "IAU"
+},
+{
+"name": "LP 944-20",
+"aliases": [],
+"kind": "moving",
+"source": "extra",
+"ra": 54.896885,
+"dec": -35.428789
+},
+{
+"name": "Lucilinburhuc",
+"aliases": [
+"HD 45350"
+],
+"kind": "star",
+"ra": 97.190463,
+"dec": 38.962963,
+"source": "IAU"
+},
+{
+"name": "Luhman 16",
+"aliases": [
+"WISE J104915.57-531906.1",
+"WISE 1049-5319"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 162.328814,
+"dec": -53.319466
+},
+{
+"name": "Lusitania",
+"aliases": [
+"HD 45652"
+],
+"kind": "star",
+"ra": 97.304967,
+"dec": 10.933891,
+"source": "IAU"
+},
+{
+"name": "Luyten's Star",
+"aliases": [
+"GJ 273"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 111.852079,
+"dec": 5.225789
+},
+{
+"name": "M1",
+"aliases": [
+"Crab Nebula"
+],
+"kind": "other",
+"source": "extra",
+"ra": 83.6324,
+"dec": 22.0174
+},
+{
+"name": "M31",
+"aliases": [
+"Andromeda Galaxy"
+],
+"kind": "other",
+"source": "extra",
+"ra": 10.684708,
+"dec": 41.26875
+},
+{
+"name": "M42",
+"aliases": [
+"Orion Nebula"
+],
+"kind": "other",
+"source": "extra",
+"ra": 83.8201,
+"dec": -5.3876
+},
+{
+"name": "M45",
+"aliases": [
+"Pleiades"
+],
+"kind": "other",
+"source": "extra",
+"ra": 56.65833,
+"dec": 24.17806
+},
+{
+"name": "M57",
+"aliases": [
+"Ring Nebula"
+],
+"kind": "other",
+"source": "extra",
+"ra": 283.396237,
+"dec": 33.029134
+},
+{
+"name": "Maasym",
+"aliases": [
+"HR 6526",
+"lam Her",
+"Lambda Her"
+],
+"kind": "star",
+"ra": 262.684624,
+"dec": 26.110646,
+"source": "IAU"
+},
+{
+"name": "Macondo",
+"aliases": [
+"HD 93083"
+],
+"kind": "star",
+"ra": 161.087146,
+"dec": -33.577024,
+"source": "IAU"
+},
+{
+"name": "Mago",
+"aliases": [
+"HD 32518"
+],
+"kind": "star",
+"ra": 77.403002,
+"dec": 69.639404,
+"source": "IAU"
+},
+{
+"name": "Mahasim",
+"aliases": [
+"HR 2095",
+"tet Aur",
+"Theta Aur"
+],
+"kind": "star",
+"ra": 89.930292,
+"dec": 37.212585,
+"source": "IAU"
+},
+{
+"name": "Mahsati",
+"aliases": [
+"HD 152581"
+],
+"kind": "star",
+"ra": 253.431594,
+"dec": 11.973747,
+"source": "IAU"
+},
+{
+"name": "Maia",
+"aliases": [
+"HR 1149",
+"20 Tau"
+],
+"kind": "star",
+"ra": 56.456701,
+"dec": 24.367744,
+"source": "IAU"
+},
+{
+"name": "Malmok",
+"aliases": [
+"WASP-39",
+"V732 Vir"
+],
+"kind": "star",
+"ra": 217.32673,
+"dec": -3.444501,
+"source": "IAU"
+},
+{
+"name": "Marfik",
+"aliases": [
+"HR 6149",
+"lam Oph",
+"Lambda Oph"
+],
+"kind": "star",
+"ra": 247.72843,
+"dec": 1.983922,
+"source": "IAU"
+},
+{
+"name": "Markab",
+"aliases": [
+"HR 8781",
+"alf Peg",
+"Alpha Peg"
+],
+"kind": "star",
+"ra": 346.190223,
+"dec": 15.205267,
+"source": "IAU"
+},
+{
+"name": "Markeb",
+"aliases": [
+"HR 3734",
+"kap Vel",
+"Kappa Vel"
+],
+"kind": "star",
+"ra": 140.528407,
+"dec": -55.010667,
+"source": "IAU"
+},
+{
+"name": "Marohu",
+"aliases": [
+"WASP-6"
+],
+"kind": "star",
+"ra": 348.157237,
+"dec": -22.673965,
+"source": "IAU"
+},
+{
+"name": "Marsic",
+"aliases": [
+"HR 6008",
+"kap Her",
+"Kappa Her"
+],
+"kind": "star",
+"ra": 242.01958,
+"dec": 17.05056,
+"source": "IAU"
+},
+{
+"name": "Matar",
+"aliases": [
+"HR 8650",
+"eta Peg",
+"Eta Peg"
+],
+"kind": "star",
+"ra": 340.750537,
+"dec": 30.221215,
+"source": "IAU"
+},
+{
+"name": "Mazaalai",
+"aliases": [
+"HAT-P-21"
+],
+"kind": "star",
+"ra": 171.274941,
+"dec": 41.027962,
+"source": "IAU",
+"query": "HAT-P-21"
+},
+{
+"name": "Mebsuta",
+"aliases": [
+"HR 2473",
+"eps Gem",
+"Epsilon Gem"
+],
+"kind": "star",
+"ra": 100.98303,
+"dec": 25.131127,
+"source": "IAU"
+},
+{
+"name": "Megrez",
+"aliases": [
+"HR 4660",
+"del UMa",
+"Delta UMa"
+],
+"kind": "star",
+"ra": 183.856499,
+"dec": 57.032617,
+"source": "IAU"
+},
+{
+"name": "Meissa",
+"aliases": [
+"HR 1879",
+"lam Ori",
+"Lambda Ori"
+],
+"kind": "star",
+"ra": 83.78449,
+"dec": 9.934156,
+"source": "IAU"
+},
+{
+"name": "Mekbuda",
+"aliases": [
+"HR 2650",
+"zet Gem",
+"Zeta Gem"
+],
+"kind": "star",
+"ra": 106.027213,
+"dec": 20.570298,
+"source": "IAU"
+},
+{
+"name": "Meleph",
+"aliases": [
+"HR 3429",
+"eps Cnc",
+"Epsilon Cnc"
+],
+"kind": "star",
+"ra": 130.112542,
+"dec": 19.544812,
+"source": "IAU"
+},
+{
+"name": "Menkalinan",
+"aliases": [
+"HR 2088",
+"bet Aur",
+"Beta Aur"
+],
+"kind": "star",
+"ra": 89.882179,
+"dec": 44.947433,
+"source": "IAU"
+},
+{
+"name": "Menkar",
+"aliases": [
+"HR 911",
+"alf Cet",
+"Alpha Cet"
+],
+"kind": "star",
+"ra": 45.569888,
+"dec": 4.089739,
+"source": "IAU"
+},
+{
+"name": "Menkent",
+"aliases": [
+"HR 5288",
+"tet Cen",
+"Theta Cen"
+],
+"kind": "star",
+"ra": 211.670615,
+"dec": -36.369955,
+"source": "IAU"
+},
+{
+"name": "Menkib",
+"aliases": [
+"HR 1228",
+"ksi Per",
+"Xi Per"
+],
+"kind": "star",
+"ra": 59.74126,
+"dec": 35.79103,
+"source": "IAU"
+},
+{
+"name": "Merak",
+"aliases": [
+"HR 4295",
+"bet UMa",
+"Beta UMa"
+],
+"kind": "star",
+"ra": 165.460332,
+"dec": 56.382434,
+"source": "IAU"
+},
+{
+"name": "Merga",
+"aliases": [
+"HR 5533",
+"38 Boo"
+],
+"kind": "star",
+"ra": 222.327793,
+"dec": 46.116204,
+"source": "IAU"
+},
+{
+"name": "Meridiana",
+"aliases": [
+"HR 7254",
+"alf CrA",
+"Alpha CrA"
+],
+"kind": "star",
+"ra": 287.36809,
+"dec": -37.904474,
+"source": "IAU"
+},
+{
+"name": "Merope",
+"aliases": [
+"HR 1156",
+"23 Tau"
+],
+"kind": "star",
+"ra": 56.581608,
+"dec": 23.948359,
+"source": "IAU"
+},
+{
+"name": "Mesarthim",
+"aliases": [
+"HR 546",
+"gam2 Ari",
+"Gamma2 Ari"
+],
+"kind": "star",
+"ra": 28.382562,
+"dec": 19.293855,
+"source": "IAU"
+},
+{
+"name": "Miaplacidus",
+"aliases": [
+"HR 3685",
+"bet Car",
+"Beta Car"
+],
+"kind": "star",
+"ra": 138.299906,
+"dec": -69.717208,
+"source": "IAU"
+},
+{
+"name": "Mimosa",
+"aliases": [
+"HR 4853",
+"bet Cru",
+"Beta Cru"
+],
+"kind": "star",
+"ra": 191.930287,
+"dec": -59.688772,
+"source": "IAU"
+},
+{
+"name": "Minchir",
+"aliases": [
+"HR 3418",
+"sig Hya",
+"Sigma Hya"
+],
+"kind": "star",
+"ra": 129.689323,
+"dec": 3.341435,
+"source": "IAU"
+},
+{
+"name": "Minelauva",
+"aliases": [
+"HR 4910",
+"del Vir",
+"Delta Vir"
+],
+"kind": "star",
+"ra": 193.900869,
+"dec": 3.397469,
+"source": "IAU"
+},
+{
+"name": "Mintaka",
+"aliases": [
+"HR 1852",
+"del Ori",
+"Delta Ori"
+],
+"kind": "star",
+"ra": 83.001667,
+"dec": -0.299095,
+"source": "IAU"
+},
+{
+"name": "Mira",
+"aliases": [
+"omi Cet",
+"HR 681",
+"Omicron Cet"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 34.836634,
+"dec": -2.977638
+},
+{
+"name": "Mirach",
+"aliases": [
+"HR 337",
+"bet And",
+"Beta And"
+],
+"kind": "star",
+"ra": 17.433016,
+"dec": 35.620558,
+"source": "IAU"
+},
+{
+"name": "Miram",
+"aliases": [
+"HR 834",
+"eta Per",
+"Eta Per"
+],
+"kind": "star",
+"ra": 42.674208,
+"dec": 55.895494,
+"source": "IAU"
+},
+{
+"name": "Mirfak",
+"aliases": [
+"HR 1017",
+"alf Per",
+"Alpha Per"
+],
+"kind": "star",
+"ra": 51.080709,
+"dec": 49.861179,
+"source": "IAU"
+},
+{
+"name": "Mirzam",
+"aliases": [
+"HR 2294",
+"bet CMa",
+"Beta CMa"
+],
+"kind": "star",
+"ra": 95.674939,
+"dec": -17.955919,
+"source": "IAU"
+},
+{
+"name": "Misam",
+"aliases": [
+"HR 941",
+"kap Per",
+"Kappa Per"
+],
+"kind": "star",
+"ra": 47.374182,
+"dec": 44.857458,
+"source": "IAU"
+},
+{
+"name": "Mizar",
+"aliases": [
+"HR 5054",
+"zet UMa",
+"Zeta UMa"
+],
+"kind": "star",
+"ra": 200.981419,
+"dec": 54.925352,
+"source": "IAU"
+},
+{
+"name": "Moldoveanu",
+"aliases": [
+"XO-1"
+],
+"kind": "star",
+"ra": 240.549359,
+"dec": 28.169561,
+"source": "IAU"
+},
+{
+"name": "Monch",
+"aliases": [
+"HD 130322"
+],
+"kind": "star",
+"ra": 221.886359,
+"dec": -0.281474,
+"source": "IAU"
+},
+{
+"name": "Montuno",
+"aliases": [
+"WASP-79"
+],
+"kind": "star",
+"ra": 66.370903,
+"dec": -30.600447,
+"source": "IAU"
+},
+{
+"name": "Morava",
+"aliases": [
+"WASP-60"
+],
+"kind": "star",
+"ra": 356.666561,
+"dec": 31.155937,
+"source": "IAU"
+},
+{
+"name": "Moriah",
+"aliases": [
+"HAT-P-23"
+],
+"kind": "star",
+"ra": 306.123848,
+"dec": 16.76217,
+"source": "IAU"
+},
+{
+"name": "Mothallah",
+"aliases": [
+"HR 544",
+"alf Tri",
+"Alpha Tri"
+],
+"kind": "star",
+"ra": 28.270439,
+"dec": 29.578819,
+"source": "IAU"
+},
+{
+"name": "Mouhoun",
+"aliases": [
+"HD 30856"
+],
+"kind": "star",
+"ra": 72.574423,
+"dec": -24.368843,
+"source": "IAU"
+},
+{
+"name": "Mpingo",
+"aliases": [
+"WASP-71"
+],
+"kind": "star",
+"ra": 29.26335,
+"dec": 0.758854,
+"source": "IAU"
+},
+{
+"name": "Muliphein",
+"aliases": [
+"HR 2657",
+"gam CMa",
+"Gamma CMa"
+],
+"kind": "star",
+"ra": 105.939556,
+"dec": -15.633287,
+"source": "IAU"
+},
+{
+"name": "Muphrid",
+"aliases": [
+"HR 5235",
+"eta Boo",
+"Eta Boo"
+],
+"kind": "star",
+"ra": 208.671162,
+"dec": 18.397721,
+"source": "IAU"
+},
+{
+"name": "Muscida",
+"aliases": [
+"HR 3323",
+"omi UMa",
+"Omicron UMa"
+],
+"kind": "star",
+"ra": 127.566126,
+"dec": 60.718168,
+"source": "IAU"
+},
+{
+"name": "Musica",
+"aliases": [
+"HR 8030",
+"18 Del"
+],
+"kind": "star",
+"ra": 314.608056,
+"dec": 10.839286,
+"source": "IAU"
+},
+{
+"name": "Muspelheim",
+"aliases": [
+"HAT-P-29"
+],
+"kind": "star",
+"ra": 33.131161,
+"dec": 51.778768,
+"source": "IAU"
+},
+{
+"name": "Nahn",
+"aliases": [
+"HR 3627",
+"ksi Cnc",
+"Xi Cnc"
+],
+"kind": "star",
+"ra": 137.339755,
+"dec": 22.045438,
+"source": "IAU"
+},
+{
+"name": "Naledi",
+"aliases": [
+"WASP-62"
+],
+"kind": "star",
+"ra": 87.139972,
+"dec": -63.988441,
+"source": "IAU"
+},
+{
+"name": "Naos",
+"aliases": [
+"HR 3165",
+"zet Pup",
+"Zeta Pup"
+],
+"kind": "star",
+"ra": 120.896031,
+"dec": -40.003148,
+"source": "IAU"
+},
+{
+"name": "Nashira",
+"aliases": [
+"HR 8278",
+"gam Cap",
+"Gamma Cap"
+],
+"kind": "star",
+"ra": 325.022689,
+"dec": -16.662371,
+"source": "IAU"
+},
+{
+"name": "Nasti",
+"aliases": [
+"HD 68988"
+],
+"kind": "star",
+"ra": 124.592387,
+"dec": 61.460721,
+"source": "IAU"
+},
+{
+"name": "Natasha",
+"aliases": [
+"HD 85390"
+],
+"kind": "star",
+"ra": 147.510403,
+"dec": -49.790266,
+"source": "IAU"
+},
+{
+"name": "Nekkar",
+"aliases": [
+"HR 5602",
+"bet Boo",
+"Beta Boo"
+],
+"kind": "star",
+"ra": 225.48651,
+"dec": 40.390569,
+"source": "IAU"
+},
+{
+"name": "Nembus",
+"aliases": [
+"HR 464",
+"51 And"
+],
+"kind": "star",
+"ra": 24.498158,
+"dec": 48.628212,
+"source": "IAU"
+},
+{
+"name": "Nenque",
+"aliases": [
+"HD 6434"
+],
+"kind": "star",
+"ra": 16.167293,
+"dec": -39.488218,
+"source": "IAU"
+},
+{
+"name": "Nervia",
+"aliases": [
+"HD 49674"
+],
+"kind": "star",
+"ra": 102.877151,
+"dec": 40.867757,
+"source": "IAU"
+},
+{
+"name": "Nganurganity",
+"aliases": [
+"HR 2646",
+"sig CMa",
+"Sigma CMa"
+],
+"kind": "star",
+"ra": 105.429784,
+"dec": -27.93483,
+"source": "IAU"
+},
+{
+"name": "Nihal",
+"aliases": [
+"HR 1829",
+"bet Lep",
+"Beta Lep"
+],
+"kind": "star",
+"ra": 82.061345,
+"dec": -20.759444,
+"source": "IAU"
+},
+{
+"name": "Nikawiy",
+"aliases": [
+"HD 136418"
+],
+"kind": "star",
+"ra": 229.775759,
+"dec": 41.733206,
+"source": "IAU"
+},
+{
+"name": "Nosaxa",
+"aliases": [
+"HD 48265"
+],
+"kind": "star",
+"ra": 100.007196,
+"dec": -48.541956,
+"source": "IAU"
+},
+{
+"name": "Nunki",
+"aliases": [
+"HR 7121",
+"sig Sgr",
+"Sigma Sgr"
+],
+"kind": "star",
+"ra": 283.81636,
+"dec": -26.296724,
+"source": "IAU"
+},
+{
+"name": "Nusakan",
+"aliases": [
+"HR 5747",
+"bet CrB",
+"Beta CrB"
+],
+"kind": "star",
+"ra": 231.957309,
+"dec": 29.105693,
+"source": "IAU"
+},
+{
+"name": "Nushagak",
+"aliases": [
+"HD 17156"
+],
+"kind": "star",
+"ra": 42.435363,
+"dec": 71.75323,
+"source": "IAU"
+},
+{
+"name": "Nyamien",
+"aliases": [
+"WASP-15"
+],
+"kind": "star",
+"ra": 208.927967,
+"dec": -32.159616,
+"source": "IAU"
+},
+{
+"name": "Ogma",
+"aliases": [
+"HD 149026"
+],
+"kind": "star",
+"ra": 247.623411,
+"dec": 38.347308,
+"source": "IAU"
+},
+{
+"name": "Okab",
+"aliases": [
+"HR 7235",
+"zet Aql",
+"Zeta Aql"
+],
+"kind": "star",
+"ra": 286.352533,
+"dec": 13.863477,
+"source": "IAU"
+},
+{
+"name": "Paikauhale",
+"aliases": [
+"HR 6165",
+"tau Sco",
+"Tau Sco"
+],
+"kind": "star",
+"ra": 248.970637,
+"dec": -28.216017,
+"source": "IAU"
+},
+{
+"name": "Parumleo",
+"aliases": [
+"WASP-32"
+],
+"kind": "star",
+"ra": 3.961699,
+"dec": 1.200441,
+"source": "IAU"
+},
+{
+"name": "Peacock",
+"aliases": [
+"HR 7790",
+"alf Pav",
+"Alpha Pav"
+],
+"kind": "star",
+"ra": 306.411904,
+"dec": -56.73509,
+"source": "IAU"
+},
+{
+"name": "Petra",
+"aliases": [
+"WASP-80"
+],
+"kind": "star",
+"ra": 303.167372,
+"dec": -2.144219,
+"source": "IAU"
+},
+{
+"name": "Phact",
+"aliases": [
+"HR 1956",
+"alf Col",
+"Alpha Col"
+],
+"kind": "star",
+"ra": 84.912254,
+"dec": -34.07411,
+"source": "IAU"
+},
+{
+"name": "Phecda",
+"aliases": [
+"HR 4554",
+"gam UMa",
+"Gamma UMa"
+],
+"kind": "star",
+"ra": 178.457697,
+"dec": 53.69476,
+"source": "IAU"
+},
+{
+"name": "Pherkad",
+"aliases": [
+"HR 5735",
+"gam UMi",
+"Gamma UMi"
+],
+"kind": "star",
+"ra": 230.182098,
+"dec": 71.834025,
+"source": "IAU"
+},
+{
+"name": "Phoenicia",
+"aliases": [
+"HD 192263",
+"V1703 Aql"
+],
+"kind": "star",
+"ra": 303.499357,
+"dec": -0.86688,
+"source": "IAU"
+},
+{
+"name": "Piautos",
+"aliases": [
+"HR 3268",
+"lam Cnc",
+"Lambda Cnc"
+],
+"kind": "star",
+"ra": 125.133901,
+"dec": 24.022311,
+"source": "IAU"
+},
+{
+"name": "Pincoya",
+"aliases": [
+"HD 164604"
+],
+"kind": "star",
+"ra": 270.778888,
+"dec": -28.560652,
+"source": "IAU"
+},
+{
+"name": "Pipirima",
+"aliases": [
+"HR 6252",
+"mu2 Sco",
+"Mu2 Sco"
+],
+"kind": "star",
+"ra": 253.083939,
+"dec": -38.017535,
+"source": "IAU"
+},
+{
+"name": "Pipoltr",
+"aliases": [
+"TrES-3",
+"V1434 Her"
+],
+"kind": "star",
+"ra": 268.029243,
+"dec": 37.546177,
+"source": "IAU"
+},
+{
+"name": "Pleione",
+"aliases": [
+"HR 1180",
+"28 Tau"
+],
+"kind": "star",
+"ra": 57.296736,
+"dec": 24.13671,
+"source": "IAU"
+},
+{
+"name": "Poerava",
+"aliases": [
+"HD 221287"
+],
+"kind": "star",
+"ra": 352.834744,
+"dec": -58.209732,
+"source": "IAU"
+},
+{
+"name": "Polaris",
+"aliases": [
+"HR 424",
+"alf UMi",
+"Alpha UMi"
+],
+"kind": "star",
+"ra": 37.954561,
+"dec": 89.264109,
+"source": "IAU"
+},
+{
+"name": "Polaris Australis",
+"aliases": [
+"HR 7228",
+"sig Oct",
+"Sigma Oct"
+],
+"kind": "star",
+"ra": 317.195265,
+"dec": -88.9565,
+"source": "IAU"
+},
+{
+"name": "Polis",
+"aliases": [
+"HR 6812",
+"mu Sgr",
+"Mu Sgr"
+],
+"kind": "star",
+"ra": 273.44087,
+"dec": -21.058832,
+"source": "IAU"
+},
+{
+"name": "Pollux",
+"aliases": [
+"HR 2990",
+"bet Gem",
+"Beta Gem"
+],
+"kind": "star",
+"ra": 116.328958,
+"dec": 28.026199,
+"source": "IAU"
+},
+{
+"name": "Porrima",
+"aliases": [
+"HR 4825",
+"gam Vir",
+"Gamma Vir"
+],
+"kind": "star",
+"ra": 190.415118,
+"dec": -1.449404,
+"source": "IAU"
+},
+{
+"name": "Praecipua",
+"aliases": [
+"HR 4247",
+"46 LMi"
+],
+"kind": "star",
+"ra": 163.327872,
+"dec": 34.214892,
+"source": "IAU"
+},
+{
+"name": "Prima Hyadum",
+"aliases": [
+"HR 1346",
+"gam Tau",
+"Gamma Tau"
+],
+"kind": "star",
+"ra": 64.94835,
+"dec": 15.627642,
+"source": "IAU"
+},
+{
+"name": "Procyon",
+"aliases": [
+"HR 2943",
+"alf CMi",
+"Alpha CMi"
+],
+"kind": "star",
+"ra": 114.825498,
+"dec": 5.224988,
+"source": "IAU"
+},
+{
+"name": "Propus",
+"aliases": [
+"HR 2216",
+"eta Gem",
+"Eta Gem"
+],
+"kind": "star",
+"ra": 93.719355,
+"dec": 22.506787,
+"source": "IAU"
+},
+{
+"name": "Proxima Centauri",
+"aliases": [
+"Proxima Cen",
+"GJ 551",
+"alf Cen",
+"Alpha Cen"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 217.428942,
+"dec": -62.67949
+},
+{
+"name": "R Aqr",
+"aliases": [
+"R Aquarii"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 355.956098,
+"dec": -15.284493
+},
+{
+"name": "R Cas",
+"aliases": [
+"R Cassiopeiae"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 359.603618,
+"dec": 51.388809
+},
+{
+"name": "R CrB",
+"aliases": [
+"R Coronae Borealis"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 237.143398,
+"dec": 28.156749
+},
+{
+"name": "R Dra",
+"aliases": [
+"R Draconis"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 248.167611,
+"dec": 66.754979
+},
+{
+"name": "R Hya",
+"aliases": [
+"R Hydrae"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 202.428251,
+"dec": -23.28132
+},
+{
+"name": "R Leo",
+"aliases": [
+"R Leonis"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 146.889517,
+"dec": 11.42884
+},
+{
+"name": "Ran",
+"aliases": [
+"HR 1084",
+"eps Eri",
+"Epsilon Eri"
+],
+"kind": "star",
+"ra": 53.232685,
+"dec": -9.458261,
+"source": "IAU",
+"query": "HR 1084"
+},
+{
+"name": "Rana",
+"aliases": [
+"HR 1136",
+"del Eri",
+"Delta Eri"
+],
+"kind": "star",
+"ra": 55.812086,
+"dec": -9.763392,
+"source": "IAU"
+},
+{
+"name": "Rapeto",
+"aliases": [
+"HD 153950"
+],
+"kind": "star",
+"ra": 256.128628,
+"dec": -43.309768,
+"source": "IAU"
+},
+{
+"name": "Rasalas",
+"aliases": [
+"HR 3905",
+"mu Leo",
+"Mu Leo"
+],
+"kind": "star",
+"ra": 148.190904,
+"dec": 26.006951,
+"source": "IAU"
+},
+{
+"name": "Rasalgethi",
+"aliases": [
+"HR 6406",
+"alf1 Her",
+"Alpha1 Her"
+],
+"kind": "star",
+"ra": 258.661909,
+"dec": 14.390341,
+"source": "IAU"
+},
+{
+"name": "Rasalhague",
+"aliases": [
+"HR 6556",
+"alf Oph",
+"Alpha Oph"
+],
+"kind": "star",
+"ra": 263.733623,
+"dec": 12.560037,
+"source": "IAU"
+},
+{
+"name": "Rastaban",
+"aliases": [
+"HR 6536",
+"bet Dra",
+"Beta Dra"
+],
+"kind": "star",
+"ra": 262.608174,
+"dec": 52.301389,
+"source": "IAU"
+},
+{
+"name": "Regulus",
+"aliases": [
+"HR 3982",
+"alf Leo",
+"Alpha Leo"
+],
+"kind": "star",
+"ra": 152.092962,
+"dec": 11.967209,
+"source": "IAU"
+},
+{
+"name": "Revati",
+"aliases": [
+"HR 361",
+"zet Psc",
+"Zeta Psc"
+],
+"kind": "star",
+"ra": 18.432858,
+"dec": 7.57536,
+"source": "IAU"
+},
+{
+"name": "Rigel",
+"aliases": [
+"HR 1713",
+"bet Ori",
+"Beta Ori"
+],
+"kind": "star",
+"ra": 78.634467,
+"dec": -8.201638,
+"source": "IAU"
+},
+{
+"name": "Rigil Kentaurus",
+"aliases": [
+"HR 5459",
+"alf Cen",
+"Alpha Cen"
+],
+"kind": "star",
+"ra": 219.902058,
+"dec": -60.833993,
+"source": "IAU"
+},
+{
+"name": "Rosaliadecastro",
+"aliases": [
+"HD 149143"
+],
+"kind": "star",
+"ra": 248.212711,
+"dec": 2.084828,
+"source": "IAU"
+},
+{
+"name": "Ross 128",
+"aliases": [
+"GJ 447"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 176.934989,
+"dec": 0.804556
+},
+{
+"name": "Ross 154",
+"aliases": [
+"V1216 Sgr"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 282.455682,
+"dec": -23.836235
+},
+{
+"name": "Ross 248",
+"aliases": [
+"HH And"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 355.479318,
+"dec": 44.17745
+},
+{
+"name": "Rotanev",
+"aliases": [
+"HR 7882",
+"bet Del",
+"Beta Del"
+],
+"kind": "star",
+"ra": 309.387255,
+"dec": 14.595089,
+"source": "IAU"
+},
+{
+"name": "RR Lyr",
+"aliases": [
+"RR Lyrae"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 291.366304,
+"dec": 42.784359
+},
+{
+"name": "Ruchbah",
+"aliases": [
+"HR 403",
+"del Cas",
+"Delta Cas"
+],
+"kind": "star",
+"ra": 21.453964,
+"dec": 60.235284,
+"source": "IAU"
+},
+{
+"name": "Rukbat",
+"aliases": [
+"HR 7348",
+"alf Sgr",
+"Alpha Sgr"
+],
+"kind": "star",
+"ra": 290.971564,
+"dec": -40.615937,
+"source": "IAU"
+},
+{
+"name": "RW Aur",
+"aliases": [
+"RW Aurigae"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 76.956526,
+"dec": 30.401438
+},
+{
+"name": "Sabik",
+"aliases": [
+"HR 6378",
+"eta Oph",
+"Eta Oph"
+],
+"kind": "star",
+"ra": 257.594529,
+"dec": -15.724907,
+"source": "IAU"
+},
+{
+"name": "Saclateni",
+"aliases": [
+"HR 1612",
+"zet Aur",
+"Zeta Aur"
+],
+"kind": "star",
+"ra": 75.619514,
+"dec": 41.075832,
+"source": "IAU"
+},
+{
+"name": "Sadachbia",
+"aliases": [
+"HR 8518",
+"gam Aqr",
+"Gamma Aqr"
+],
+"kind": "star",
+"ra": 335.414048,
+"dec": -1.387349,
+"source": "IAU"
+},
+{
+"name": "Sadalbari",
+"aliases": [
+"HR 8684",
+"mu Peg",
+"Mu Peg"
+],
+"kind": "star",
+"ra": 342.500804,
+"dec": 24.601581,
+"source": "IAU"
+},
+{
+"name": "Sadalmelik",
+"aliases": [
+"HR 8414",
+"alf Aqr",
+"Alpha Aqr"
+],
+"kind": "star",
+"ra": 331.445981,
+"dec": -0.319851,
+"source": "IAU"
+},
+{
+"name": "Sadalsuud",
+"aliases": [
+"HR 8232",
+"bet Aqr",
+"Beta Aqr"
+],
+"kind": "star",
+"ra": 322.889717,
+"dec": -5.571175,
+"source": "IAU"
+},
+{
+"name": "Sadr",
+"aliases": [
+"HR 7796",
+"gam Cyg",
+"Gamma Cyg"
+],
+"kind": "star",
+"ra": 305.557091,
+"dec": 40.256679,
+"source": "IAU"
+},
+{
+"name": "Sagarmatha",
+"aliases": [
+"HD 100777"
+],
+"kind": "star",
+"ra": 173.96468,
+"dec": -4.755696,
+"source": "IAU"
+},
+{
+"name": "Saiph",
+"aliases": [
+"HR 2004",
+"kap Ori",
+"Kappa Ori"
+],
+"kind": "star",
+"ra": 86.93912,
+"dec": -9.669605,
+"source": "IAU"
+},
+{
+"name": "Salm",
+"aliases": [
+"HR 8880",
+"tau Peg",
+"Tau Peg"
+],
+"kind": "star",
+"ra": 350.159359,
+"dec": 23.740355,
+"source": "IAU"
+},
+{
+"name": "Samaya",
+"aliases": [
+"HD 205739"
+],
+"kind": "star",
+"ra": 324.535017,
+"dec": -31.737483,
+"source": "IAU"
+},
+{
+"name": "Sansuna",
+"aliases": [
+"HAT-P-34"
+],
+"kind": "star",
+"ra": 303.195361,
+"dec": 18.104834,
+"source": "IAU"
+},
+{
+"name": "Sargas",
+"aliases": [
+"HR 6553",
+"tet Sco",
+"Theta Sco"
+],
+"kind": "star",
+"ra": 264.329708,
+"dec": -42.997828,
+"source": "IAU"
+},
+{
+"name": "Sarin",
+"aliases": [
+"HR 6410",
+"del Her",
+"Delta Her"
+],
+"kind": "star",
+"ra": 258.757961,
+"dec": 24.839207,
+"source": "IAU"
+},
+{
+"name": "Sceptrum",
+"aliases": [
+"HR 1481",
+"53 Eri"
+],
+"kind": "star",
+"ra": 69.545098,
+"dec": -14.304028,
+"source": "IAU"
+},
+{
+"name": "Scheat",
+"aliases": [
+"HR 8775",
+"bet Peg",
+"Beta Peg"
+],
+"kind": "star",
+"ra": 345.943573,
+"dec": 28.082787,
+"source": "IAU"
+},
+{
+"name": "Schedar",
+"aliases": [
+"HR 168",
+"alf Cas",
+"Alpha Cas"
+],
+"kind": "star",
+"ra": 10.126846,
+"dec": 56.537329,
+"source": "IAU"
+},
+{
+"name": "SCR J1845-6357",
+"aliases": [],
+"kind": "moving",
+"source": "extra",
+"ra": 281.271889,
+"dec": -63.963181
+},
+{
+"name": "Secunda Hyadum",
+"aliases": [
+"HR 1373",
+"del1 Tau",
+"Delta1 Tau"
+],
+"kind": "star",
+"ra": 65.73373,
+"dec": 17.542514,
+"source": "IAU"
+},
+{
+"name": "Segin",
+"aliases": [
+"HR 0542",
+"eps Cas",
+"Epsilon Cas"
+],
+"kind": "star",
+"ra": 28.598892,
+"dec": 63.6701,
+"source": "IAU"
+},
+{
+"name": "Seginus",
+"aliases": [
+"HR 5435",
+"gam Boo",
+"Gamma Boo"
+],
+"kind": "star",
+"ra": 218.019465,
+"dec": 38.308248,
+"source": "IAU"
+},
+{
+"name": "Sgr A*",
+"aliases": [
+"Galactic Centre",
+"Galactic Center"
+],
+"kind": "other",
+"source": "extra",
+"ra": 266.416817,
+"dec": -29.007825
+},
+{
+"name": "Sham",
+"aliases": [
+"HR 7479",
+"alf Sge",
+"Alpha Sge"
+],
+"kind": "star",
+"ra": 295.024131,
+"dec": 18.013891,
+"source": "IAU"
+},
+{
+"name": "Shama",
+"aliases": [
+"HD 99109"
+],
+"kind": "star",
+"ra": 171.072327,
+"dec": -1.529074,
+"source": "IAU"
+},
+{
+"name": "Sharjah",
+"aliases": [
+"HIP 79431"
+],
+"kind": "star",
+"ra": 243.174081,
+"dec": -18.875503,
+"source": "IAU"
+},
+{
+"name": "Shaula",
+"aliases": [
+"HR 6527",
+"lam Sco",
+"Lambda Sco"
+],
+"kind": "star",
+"ra": 263.402167,
+"dec": -37.103824,
+"source": "IAU"
+},
+{
+"name": "Sheliak",
+"aliases": [
+"HR 7106",
+"bet Lyr",
+"Beta Lyr"
+],
+"kind": "star",
+"ra": 282.51998,
+"dec": 33.362667,
+"source": "IAU"
+},
+{
+"name": "Sheratan",
+"aliases": [
+"HR 553",
+"bet Ari",
+"Beta Ari"
+],
+"kind": "star",
+"ra": 28.660046,
+"dec": 20.808031,
+"source": "IAU"
+},
+{
+"name": "Sika",
+"aliases": [
+"HD 181720"
+],
+"kind": "star",
+"ra": 290.720771,
+"dec": -32.919053,
+"source": "IAU"
+},
+{
+"name": "Sirius",
+"aliases": [
+"HR 2491",
+"alf CMa",
+"Alpha CMa"
+],
+"kind": "star",
+"ra": 101.287155,
+"dec": -16.716116,
+"source": "IAU"
+},
+{
+"name": "Situla",
+"aliases": [
+"HR 8610",
+"kap Aqr",
+"Kappa Aqr"
+],
+"kind": "star",
+"ra": 339.439086,
+"dec": -4.228055,
+"source": "IAU"
+},
+{
+"name": "Skat",
+"aliases": [
+"HR 8709",
+"del Aqr",
+"Delta Aqr"
+],
+"kind": "star",
+"ra": 343.662526,
+"dec": -15.82082,
+"source": "IAU"
+},
+{
+"name": "Solaris",
+"aliases": [
+"BD+14 4559"
+],
+"kind": "star",
+"ra": 318.399959,
+"dec": 14.689385,
+"source": "IAU"
+},
+{
+"name": "Spica",
+"aliases": [
+"HR 5056",
+"alf Vir",
+"Alpha Vir"
+],
+"kind": "star",
+"ra": 201.298247,
+"dec": -11.161319,
+"source": "IAU"
+},
+{
+"name": "Sterrennacht",
+"aliases": [
+"HAT-P-6"
+],
+"kind": "star",
+"ra": 354.77421,
+"dec": 42.465974,
+"source": "IAU"
+},
+{
+"name": "Stribor",
+"aliases": [
+"HD 75898"
+],
+"kind": "star",
+"ra": 133.461688,
+"dec": 33.056811,
+"source": "IAU"
+},
+{
+"name": "Struve 2398",
+"aliases": [
+"GJ 725"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 280.694602,
+"dec": 59.630392,
+"query": "GJ 725"
+},
+{
+"name": "Sualocin",
+"aliases": [
+"HR 7906",
+"alf Del",
+"Alpha Del"
+],
+"kind": "star",
+"ra": 309.909498,
+"dec": 15.91216,
+"source": "IAU"
+},
+{
+"name": "Subra",
+"aliases": [
+"HR 3852",
+"omi Leo",
+"Omicron Leo"
+],
+"kind": "star",
+"ra": 145.287634,
+"dec": 9.892308,
+"source": "IAU"
+},
+{
+"name": "Suhail",
+"aliases": [
+"HR 3634",
+"lam Vel",
+"Lambda Vel"
+],
+"kind": "star",
+"ra": 136.998991,
+"dec": -43.432591,
+"source": "IAU"
+},
+{
+"name": "Sulafat",
+"aliases": [
+"HR 7178",
+"gam Lyr",
+"Gamma Lyr"
+],
+"kind": "star",
+"ra": 284.735927,
+"dec": 32.689556,
+"source": "IAU"
+},
+{
+"name": "Syrma",
+"aliases": [
+"HR 5338",
+"iot Vir",
+"Iota Vir"
+],
+"kind": "star",
+"ra": 214.003618,
+"dec": -6.000547,
+"source": "IAU"
+},
+{
+"name": "T Cep",
+"aliases": [
+"T Cephei"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 317.382431,
+"dec": 68.490898
+},
+{
+"name": "T Tau",
+"aliases": [
+"T Tauri"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 65.497633,
+"dec": 19.53512
+},
+{
+"name": "Tabby's Star",
+"aliases": [
+"KIC 8462852",
+"Boyajian's Star"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 301.564386,
+"dec": 44.456886,
+"query": "KIC 8462852"
+},
+{
+"name": "Tabit",
+"aliases": [
+"HR 1543",
+"pi3 Ori",
+"Pi3 Ori"
+],
+"kind": "star",
+"ra": 72.460047,
+"dec": 6.961278,
+"source": "IAU"
+},
+{
+"name": "Taika",
+"aliases": [
+"HAT-P-40"
+],
+"kind": "star",
+"ra": 335.512865,
+"dec": 45.457366,
+"source": "IAU"
+},
+{
+"name": "Taiyangshou",
+"aliases": [
+"HR 4518",
+"chi UMa",
+"Chi UMa"
+],
+"kind": "star",
+"ra": 176.512559,
+"dec": 47.779404,
+"source": "IAU"
+},
+{
+"name": "Taiyi",
+"aliases": [
+"HR 4916",
+"8 Dra"
+],
+"kind": "star",
+"ra": 193.868952,
+"dec": 65.438474,
+"source": "IAU"
+},
+{
+"name": "Talitha",
+"aliases": [
+"HR 3569",
+"iot UMa",
+"Iota UMa"
+],
+"kind": "star",
+"ra": 134.80189,
+"dec": 48.041826,
+"source": "IAU"
+},
+{
+"name": "Tangra",
+"aliases": [
+"WASP-21"
+],
+"kind": "star",
+"ra": 347.492723,
+"dec": 18.396079,
+"source": "IAU"
+},
+{
+"name": "Tania Australis",
+"aliases": [
+"HR 4069",
+"mu UMa",
+"Mu UMa"
+],
+"kind": "star",
+"ra": 155.582199,
+"dec": 41.499538,
+"source": "IAU"
+},
+{
+"name": "Tania Borealis",
+"aliases": [
+"HR 4033",
+"lam UMa",
+"Lambda UMa"
+],
+"kind": "star",
+"ra": 154.27408,
+"dec": 42.914414,
+"source": "IAU"
+},
+{
+"name": "Tapecue",
+"aliases": [
+"HD 63765"
+],
+"kind": "star",
+"ra": 116.957166,
+"dec": -54.264145,
+"source": "IAU"
+},
+{
+"name": "Tarazed",
+"aliases": [
+"HR 7525",
+"gam Aql",
+"Gamma Aql"
+],
+"kind": "star",
+"ra": 296.564912,
+"dec": 10.613259,
+"source": "IAU"
+},
+{
+"name": "Tarf",
+"aliases": [
+"HR 3249",
+"bet Cnc",
+"Beta Cnc"
+],
+"kind": "star",
+"ra": 124.128837,
+"dec": 9.185544,
+"source": "IAU"
+},
+{
+"name": "tau Cet",
+"aliases": [
+"Tau Ceti"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 26.017013,
+"dec": -15.93748
+},
+{
+"name": "Taygeta",
+"aliases": [
+"HR 1145",
+"19 Tau"
+],
+"kind": "star",
+"ra": 56.302083,
+"dec": 24.467274,
+"source": "IAU"
+},
+{
+"name": "Teegarden's Star",
+"aliases": [],
+"kind": "moving",
+"source": "extra",
+"ra": 43.253716,
+"dec": 16.881287
+},
+{
+"name": "Tegmine",
+"aliases": [
+"HR 3208",
+"zet1 Cnc",
+"Zeta1 Cnc"
+],
+"kind": "star",
+"ra": 123.053027,
+"dec": 17.647767,
+"source": "IAU"
+},
+{
+"name": "Tejat",
+"aliases": [
+"HR 2286",
+"mu Gem",
+"Mu Gem"
+],
+"kind": "star",
+"ra": 95.740112,
+"dec": 22.513583,
+"source": "IAU"
+},
+{
+"name": "Terebellum",
+"aliases": [
+"HR 7597",
+"ome Sgr",
+"Omega Sgr"
+],
+"kind": "star",
+"ra": 298.959844,
+"dec": -26.299359,
+"source": "IAU"
+},
+{
+"name": "Tevel",
+"aliases": [
+"HAT-P-9"
+],
+"kind": "star",
+"ra": 110.168569,
+"dec": 37.140651,
+"source": "IAU"
+},
+{
+"name": "Theemin",
+"aliases": [
+"HR 1464",
+"ups2 Eri",
+"Upsilon2 Eri"
+],
+"kind": "star",
+"ra": 68.887658,
+"dec": -30.562342,
+"source": "IAU"
+},
+{
+"name": "Thuban",
+"aliases": [
+"HR 5291",
+"alf Dra",
+"Alpha Dra"
+],
+"kind": "star",
+"ra": 211.097323,
+"dec": 64.37587,
+"source": "IAU"
+},
+{
+"name": "Tiaki",
+"aliases": [
+"HR 8636",
+"bet Gru",
+"Beta Gru"
+],
+"kind": "star",
+"ra": 340.666876,
+"dec": -46.884576,
+"source": "IAU"
+},
+{
+"name": "Tianguan",
+"aliases": [
+"HR 1910",
+"zet Tau",
+"Zeta Tau"
+],
+"kind": "star",
+"ra": 84.411189,
+"dec": 21.142544,
+"source": "IAU"
+},
+{
+"name": "Tianyi",
+"aliases": [
+"HR 4863",
+"7 Dra"
+],
+"kind": "star",
+"ra": 191.893097,
+"dec": 66.790304,
+"source": "IAU"
+},
+{
+"name": "Timir",
+"aliases": [
+"HD 148427"
+],
+"kind": "star",
+"ra": 247.117297,
+"dec": -13.399636,
+"source": "IAU"
+},
+{
+"name": "Tislit",
+"aliases": [
+"WASP-161"
+],
+"kind": "star",
+"ra": 126.337849,
+"dec": -11.500987,
+"source": "IAU"
+},
+{
+"name": "Titawin",
+"aliases": [
+"HR 458",
+"ups And",
+"Upsilon And"
+],
+"kind": "star",
+"ra": 24.19934,
+"dec": 41.405459,
+"source": "IAU"
+},
+{
+"name": "Tojil",
+"aliases": [
+"WASP-22"
+],
+"kind": "star",
+"ra": 52.818028,
+"dec": -23.819678,
+"source": "IAU"
+},
+{
+"name": "Toliman",
+"aliases": [
+"HR 5460",
+"alf Cen",
+"Alpha Cen"
+],
+"kind": "star",
+"ra": 219.896096,
+"dec": -60.837528,
+"source": "IAU"
+},
+{
+"name": "Tonatiuh",
+"aliases": [
+"HR 4609"
+],
+"kind": "star",
+"ra": 181.312988,
+"dec": 76.905734,
+"source": "IAU"
+},
+{
+"name": "Torcular",
+"aliases": [
+"HR 510",
+"omi Psc",
+"Omicron Psc"
+],
+"kind": "star",
+"ra": 26.348438,
+"dec": 9.157751,
+"source": "IAU"
+},
+{
+"name": "TRAPPIST-1",
+"aliases": [
+"2MASS J23062928-0502285"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 346.622369,
+"dec": -5.041399
+},
+{
+"name": "Tuiren",
+"aliases": [
+"HAT-P-36"
+],
+"kind": "star",
+"ra": 188.266275,
+"dec": 44.915332,
+"source": "IAU"
+},
+{
+"name": "Tupa",
+"aliases": [
+"HD 108147"
+],
+"kind": "star",
+"ra": 186.442781,
+"dec": -64.022088,
+"source": "IAU"
+},
+{
+"name": "Tupi",
+"aliases": [
+"HD 23079"
+],
+"kind": "star",
+"ra": 54.929567,
+"dec": -52.915838,
+"source": "IAU"
+},
+{
+"name": "Tureis",
+"aliases": [
+"HR 3185",
+"rho Pup",
+"Rho Pup"
+],
+"kind": "star",
+"ra": 121.886037,
+"dec": -24.304324,
+"source": "IAU"
+},
+{
+"name": "U Ori",
+"aliases": [
+"U Orionis"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 88.954878,
+"dec": 20.175188
+},
+{
+"name": "Ukdah",
+"aliases": [
+"HR 3845",
+"iot Hya",
+"Iota Hya"
+],
+"kind": "star",
+"ra": 144.964006,
+"dec": -1.142811,
+"source": "IAU"
+},
+{
+"name": "Uklun",
+"aliases": [
+"HD 102117"
+],
+"kind": "star",
+"ra": 176.210254,
+"dec": -58.703711,
+"source": "IAU"
+},
+{
+"name": "Unukalhai",
+"aliases": [
+"HR 5854",
+"alf Ser",
+"Alpha Ser"
+],
+"kind": "star",
+"ra": 236.066975,
+"dec": 6.42563,
+"source": "IAU"
+},
+{
+"name": "Uruk",
+"aliases": [
+"HD 231701"
+],
+"kind": "star",
+"ra": 293.017337,
+"dec": 16.47429,
+"source": "IAU"
+},
+{
+"name": "UV Cet",
+"aliases": [
+"Luyten 726-8"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 24.756824,
+"dec": -17.950278
+},
+{
+"name": "V1057 Cyg",
+"aliases": [],
+"kind": "variable",
+"source": "extra",
+"ra": 314.72389,
+"dec": 44.257886
+},
+{
+"name": "V1298 Tau",
+"aliases": [],
+"kind": "variable",
+"source": "extra",
+"ra": 61.331629,
+"dec": 20.157101
+},
+{
+"name": "V838 Mon",
+"aliases": [],
+"kind": "variable",
+"source": "extra",
+"ra": 106.020092,
+"dec": -3.847402
+},
+{
+"name": "Van Maanen's Star",
+"aliases": [
+"GJ 35"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 12.291243,
+"dec": 5.388609,
+"query": "GJ 35"
+},
+{
+"name": "Vega",
+"aliases": [
+"HR 7001",
+"alf Lyr",
+"Alpha Lyr"
+],
+"kind": "star",
+"ra": 279.234735,
+"dec": 38.783689,
+"source": "IAU"
+},
+{
+"name": "Veritate",
+"aliases": [
+"HR 8930",
+"14 And"
+],
+"kind": "star",
+"ra": 352.822555,
+"dec": 39.236199,
+"source": "IAU"
+},
+{
+"name": "Vindemiatrix",
+"aliases": [
+"HR 4932",
+"eps Vir",
+"Epsilon Vir"
+],
+"kind": "star",
+"ra": 195.544154,
+"dec": 10.959149,
+"source": "IAU"
+},
+{
+"name": "VY CMa",
+"aliases": [
+"VY Canis Majoris"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 110.743026,
+"dec": -25.767554
+},
+{
+"name": "W Hya",
+"aliases": [
+"W Hydrae"
+],
+"kind": "variable",
+"source": "extra",
+"ra": 207.258341,
+"dec": -28.367648
+},
+{
+"name": "Wasat",
+"aliases": [
+"HR 2777",
+"del Gem",
+"Delta Gem"
+],
+"kind": "star",
+"ra": 110.030727,
+"dec": 21.982304,
+"source": "IAU"
+},
+{
+"name": "Wazn",
+"aliases": [
+"HR 2040",
+"bet Col",
+"Beta Col"
+],
+"kind": "star",
+"ra": 87.739968,
+"dec": -35.76831,
+"source": "IAU"
+},
+{
+"name": "Wezen",
+"aliases": [
+"HR 2693",
+"del CMa",
+"Delta CMa"
+],
+"kind": "star",
+"ra": 107.09785,
+"dec": -26.3932,
+"source": "IAU"
+},
+{
+"name": "WISE J085510.83-071442.5",
+"aliases": [
+"WISE 0855-0714",
+"WISE 0855"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 133.818908,
+"dec": -7.247048
+},
+{
+"name": "Wolf 359",
+"aliases": [
+"CN Leo",
+"GJ 406"
+],
+"kind": "moving",
+"source": "extra",
+"ra": 164.120504,
+"dec": 7.014723
+},
+{
+"name": "Wurren",
+"aliases": [
+"HR 338",
+"zet Phe",
+"Zeta Phe"
+],
+"kind": "star",
+"ra": 17.096169,
+"dec": -55.24576,
+"source": "IAU"
+},
+{
+"name": "Xamidimura",
+"aliases": [
+"HR 6247",
+"mu1 Sco",
+"Mu1 Sco"
+],
+"kind": "star",
+"ra": 252.967618,
+"dec": -38.047399,
+"source": "IAU"
+},
+{
+"name": "Xihe",
+"aliases": [
+"HD 173416"
+],
+"kind": "star",
+"ra": 280.900455,
+"dec": 36.556606,
+"source": "IAU"
+},
+{
+"name": "Xuange",
+"aliases": [
+"HR 5351",
+"lam Boo",
+"Lambda Boo"
+],
+"kind": "star",
+"ra": 214.09591,
+"dec": 46.088304,
+"source": "IAU"
+},
+{
+"name": "Yed Posterior",
+"aliases": [
+"HR 6075",
+"eps Oph",
+"Epsilon Oph"
+],
+"kind": "star",
+"ra": 244.580376,
+"dec": -4.692513,
+"source": "IAU"
+},
+{
+"name": "Yed Prior",
+"aliases": [
+"HR 6056",
+"del Oph",
+"Delta Oph"
+],
+"kind": "star",
+"ra": 243.586413,
+"dec": -3.694326,
+"source": "IAU"
+},
+{
+"name": "Yildun",
+"aliases": [
+"HR 6789",
+"del UMi",
+"Delta UMi"
+],
+"kind": "star",
+"ra": 263.054159,
+"dec": 86.58646,
+"source": "IAU"
+},
+{
+"name": "YZ Cet",
+"aliases": [],
+"kind": "moving",
+"source": "extra",
+"ra": 18.127654,
+"dec": -16.998988
+},
+{
+"name": "Zaniah",
+"aliases": [
+"HR 4689",
+"eta Vir",
+"Eta Vir"
+],
+"kind": "star",
+"ra": 184.976427,
+"dec": -0.666796,
+"source": "IAU"
+},
+{
+"name": "Zaurak",
+"aliases": [
+"HR 1231",
+"gam Eri",
+"Gamma Eri"
+],
+"kind": "star",
+"ra": 59.507358,
+"dec": -13.508515,
+"source": "IAU"
+},
+{
+"name": "Zavijava",
+"aliases": [
+"HR 4540",
+"bet Vir",
+"Beta Vir"
+],
+"kind": "star",
+"ra": 177.673827,
+"dec": 1.764723,
+"source": "IAU"
+},
+{
+"name": "Zhang",
+"aliases": [
+"HR 3903",
+"ups1 Hya",
+"Upsilon1 Hya"
+],
+"kind": "star",
+"ra": 147.869479,
+"dec": -14.846629,
+"source": "IAU"
+},
+{
+"name": "Zibal",
+"aliases": [
+"HR 984",
+"zet Eri",
+"Zeta Eri"
+],
+"kind": "star",
+"ra": 48.95844,
+"dec": -8.819732,
+"source": "IAU"
+},
+{
+"name": "Zosma",
+"aliases": [
+"HR 4357",
+"del Leo",
+"Delta Leo"
+],
+"kind": "star",
+"ra": 168.527089,
+"dec": 20.523718,
+"source": "IAU"
+},
+{
+"name": "Zubenelgenubi",
+"aliases": [
+"HR 5531",
+"alf2 Lib",
+"Alpha2 Lib"
+],
+"kind": "star",
+"ra": 222.719638,
+"dec": -16.041777,
+"source": "IAU"
+},
+{
+"name": "Zubenelhakrabi",
+"aliases": [
+"HR 5787",
+"gam Lib",
+"Gamma Lib"
+],
+"kind": "star",
+"ra": 233.881575,
+"dec": -14.789536,
+"source": "IAU"
+},
+{
+"name": "Zubeneschamali",
+"aliases": [
+"HR 5685",
+"bet Lib",
+"Beta Lib"
+],
+"kind": "star",
+"ra": 229.251724,
+"dec": -9.382914,
+"source": "IAU"
+}
+]
