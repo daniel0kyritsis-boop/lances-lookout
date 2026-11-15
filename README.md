@@ -15,6 +15,13 @@ Built for the **Planet X and SPHEREx** challenge. All five required test targets
 | RW Aur | variable | Brightens between 2025.69 and 2026.70 |
 | R Dra | variable | Fades between 2025.47 and 2026.47 (saturated core) |
 
+> **Use of AI.** The code in this repository (Python, the web page and the tests) was
+> written with an AI coding assistant, [Claude](https://claude.ai) by Anthropic, working
+> under our team's direction. The team chose the challenge approach (blinking SPHEREx
+> epochs), made the design decisions, and checked the results against the challenge's
+> five test targets. No AI-generated images, audio or video are used, and nothing uses
+> NASA branding. See [Credits and data](#credits-and-data) for all other resources.
+
 ## Quick start
 
 ```bash
@@ -233,6 +240,20 @@ The tests use synthetic FITS files and fake archive responses, so they need no n
 - **Name lookup needs the internet.** astroquery's SIMBAD route currently fails
   (SIMBAD returns 404), so lookups go through CDS Sesame. Coordinates and the five
   test targets work offline.
+
+## Credits and data
+
+- **NASA SPHEREx** Level 2 spectral images, from NASA/IPAC's Infrared Science Archive
+  ([IRSA](https://irsa.ipac.caltech.edu/Missions/spherex.html)): found with IRSA's
+  [TAP service](https://irsa.ipac.caltech.edu/docs/program_interface/TAP.html) and
+  downloaded with its cutout service, following IRSA's SPHEREx tutorials.
+- **Test targets** from the NASA Space Apps 2026 challenge *Planet X and SPHEREx*.
+- **Star names, positions and proper motions:** [CDS Sesame](https://cds.unistra.fr/cgi-bin/Sesame)
+  and [SIMBAD](https://simbad.cds.unistra.fr/) (CDS, Strasbourg).
+- **Name suggestions:** the IAU Catalog of Star Names (IAU WGSN, CC BY 4.0).
+- **Software:** Astropy, reproject, PyVO, Astroquery, NumPy, SciPy, Pillow, Matplotlib,
+  Requests, FastAPI and Uvicorn; Docker; hosted on Render; Roboto font from Google Fonts.
+- **AI assistance:** code written with Claude (Anthropic), as described at the top.
 
 ## Project layout
 

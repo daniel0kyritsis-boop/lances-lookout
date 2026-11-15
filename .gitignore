@@ -32,3 +32,5 @@ frames/*
 !frames/_auto/
 # Pre-built spectra (make_spectra.py)
 !frames/_spectra/
+# Team documents kept outside the repository
+*.docx
