@@ -40,7 +40,8 @@ FAMOUS_FRAMES = ["sirius", "betelgeuse", "vega", "polaris", "rigil-kentaurus", "
 ALLOW = (["server.py", "Dockerfile", ".dockerignore", "requirements.txt", "prefetch.py",
           "make_frames.py", "plot_epochs.py", "build_names.py", "web/*", "spherex_data/*.py",
           "spherex_data/*.json", "tests/*.py"]
-         + [f"frames/{name}/*" for name in TEST_FRAMES + FAMOUS_FRAMES])
+         + [f"frames/{name}/*" for name in TEST_FRAMES]
+         + [f"frames/{name}*/*" for name in FAMOUS_FRAMES] + ["frames/_auto/*"])
 
 
 def main():

@@ -11,21 +11,25 @@ frames/*
 !frames/wise-j085510-83-071442-5_d5-6/
 !frames/rw-aur/
 !frames/r-dra/
-# The famous-stars row, pre-built so those buttons load instantly too.
-!frames/sirius/
-!frames/betelgeuse/
-!frames/vega/
-!frames/polaris/
-!frames/rigil-kentaurus/
-!frames/proxima-centauri/
-!frames/arcturus/
-!frames/antares/
-!frames/rigel/
-!frames/aldebaran/
-!frames/mira/
-!frames/algol/
-!frames/eta-car/
-!frames/wolf-359/
-!frames/61-cyg-a/
-!frames/trappist-1/
-!frames/kic-8462852/
+# The famous-stars row, pre-built (any detector choice) so those buttons load instantly too.
+!frames/sirius*/
+!frames/betelgeuse*/
+!frames/vega*/
+!frames/polaris*/
+!frames/rigil-kentaurus*/
+!frames/proxima-centauri*/
+!frames/arcturus*/
+!frames/antares*/
+!frames/rigel*/
+!frames/aldebaran*/
+!frames/mira*/
+!frames/algol*/
+!frames/eta-car*/
+!frames/wolf-359*/
+!frames/61-cyg-a*/
+!frames/trappist-1*/
+!frames/kic-8462852*/
+# Remembered automatic detector choices (spherex_data/best.py)
+!frames/_auto/
+# Pre-built spectra (make_spectra.py)
+!frames/_spectra/

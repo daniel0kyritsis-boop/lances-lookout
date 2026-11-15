@@ -49,4 +49,29 @@ def test_api_endpoints():
     import server
     c = TestClient(server.app)
     assert c.get("/api/suggest", params={"q": "barn"}).json()[0]["name"] == "Barnard's Star"
-    assert len(c.get("/api/famous").json()) == len(names.FAMOUS)
+    fam = c.get("/api/famous").json()                  # only stars whose frames are built
+    assert len(fam) <= len(names.FAMOUS)
+    assert all(server._ready(s["query"]) for s in fam)
+
+
+def test_breaker_skips_irsa_after_a_failure(tmp_path, monkeypatch):
+    import json
+    import pytest
+    from spherex_data import config, query
+    monkeypatch.setattr(config, "CACHE_DIR", tmp_path)
+    calls = []
+
+    def down(_):
+        calls.append(1)
+        raise RuntimeError("502")
+
+    with pytest.raises(RuntimeError):
+        query.find_images(5, 6, [2], _tap=down)
+    with pytest.raises(ConnectionError):               # not asked again straight away
+        query.find_images(5, 6, [2], _tap=down)
+    assert len(calls) == 1
+    p = query._cache_path(5, 6, [5])
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps([{"uri": "u", "mjd": 1.0, "bandpass": "SPHEREx-D5", "detector": 5}]))
+    got = query.find_images(5, 6, None, _tap=down, partial_ok=True)   # partial cache accepted
+    assert [r.detector for r in got] == [5]

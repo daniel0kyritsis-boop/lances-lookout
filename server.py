@@ -5,7 +5,8 @@
 Endpoints
     GET /api/targets                        the five test targets and whether they're ready
     GET /api/suggest?q=barn                 star names for the search box (typo tolerant)
-    GET /api/famous                         well-known stars for quick access
+    GET /api/famous                         well-known stars for quick access (pre-built ones)
+    GET /api/spectrum?target=RW Aur         brightness vs wavelength per epoch, matched comparison
     GET /api/frames?target=Barnard's Star   blink frames for a name or "ra dec"
     GET /api/frames?ra=269.45&dec=4.69      ... or for coordinates
         optional: fov (deg, 0.02-0.25), detectors (e.g. "5,6"), refresh=true
@@ -30,7 +31,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from spherex_data import TEST_TARGETS, frames, get_cutouts, names, parse_target
+from spherex_data import TEST_TARGETS, best, frames, get_cutouts, names, parse_target, spectrum
 
 log.setLevel("WARNING")   # SPHEREx headers trigger a long, harmless SIP note per file
 
@@ -45,6 +46,9 @@ logger = logging.getLogger("uvicorn.error")
 
 MIN_FOV, MAX_FOV = 0.02, 0.25          # degrees; bigger fields mean far more downloading
 MAX_IMAGES = 150                       # per request, spread evenly across time
+MAX_IMAGES_MULTI = 240                 # when combining several detectors
+AUTO_DIR = FRAMES_DIR / "_auto"        # remembered automatic detector choices
+SPECTRA_DIR = FRAMES_DIR / "_spectra"  # measured spectra (spectrum.py)
 
 # What each test target is, and the detectors it shows up best on.
 # WISE 0855 is a very cold brown dwarf: invisible at 1-2 microns, bright at 4-5.
@@ -119,6 +123,22 @@ def _resolve(target: str | None, ra: float | None, dec: float | None):
         raise HTTPException(404, {"message": str(e), "suggestions": names.did_you_mean(text)})
 
 
+ARCHIVE_DOWN = ("NASA's IRSA archive isn't answering right now, and this view hasn't been "
+                "downloaded before. Try one of the test targets or famous stars (they're "
+                "pre-built), or try again later.")
+
+
+def _archive(fn, *args, **kwargs):
+    """Call something that downloads from IRSA; an archive failure becomes a clear 503."""
+    try:
+        return fn(*args, **kwargs)
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.warning("archive request failed: %s", str(e).splitlines()[0])
+        raise HTTPException(503, ARCHIVE_DOWN)
+
+
 def _with_urls(meta: dict, folder: str) -> dict:
     base = f"/frames/{folder}/"
     meta = dict(meta)
@@ -136,14 +156,48 @@ def _with_urls(meta: dict, folder: str) -> dict:
     return meta
 
 
+def _remembered(name: str) -> dict | None:
+    path = AUTO_DIR / (frames.folder_name(name, frames.DEFAULT_DETECTORS, None) + ".json")
+    return json.loads(path.read_text()) if path.exists() else None
+
+
+def _auto_choice(tgt, fov: float = frames.DEFAULT_FOV_DEG) -> dict:
+    """The best detector(s) for a target, worked out once (best.py) and kept in frames/_auto/.
+
+    A target already built on detector 2 (before automatic choice existed, or while
+    IRSA was down) is shown straight away rather than waiting on IRSA to compare bands.
+    """
+    choice = _remembered(tgt.name)
+    if choice:
+        return choice
+    if (FRAMES_DIR / frames.folder_name(tgt.name, frames.DEFAULT_DETECTORS, fov) / "frames.json").exists():
+        return {"detectors": list(frames.DEFAULT_DETECTORS), "method": "existing",
+                "reason": "already built on detector 2"}
+    return best.remembered_choice(tgt.name, AUTO_DIR, _lock("auto:" + tgt.name))
+
+
+def _ready(name: str) -> bool:
+    """Does this name have frames built, so its button loads instantly?"""
+    choice = _remembered(name)
+    dets = choice["detectors"] if choice else frames.DEFAULT_DETECTORS
+    return (FRAMES_DIR / frames.folder_name(name, dets, frames.DEFAULT_FOV_DEG) / "frames.json").exists()
+
+
 def _settings(tgt, detectors: str | None, fov: float):
     if not MIN_FOV <= fov <= MAX_FOV:
         raise HTTPException(400, f"fov must be between {MIN_FOV} and {MAX_FOV} degrees")
     dets = _parse_detectors(detectors)
     key = BY_NAME.get(tgt.name)
-    if dets is None:                    # not given: the target's best detectors, else 2
-        dets = TARGET_INFO[key]["detectors"] if key else list(frames.DEFAULT_DETECTORS)
-    return (dets or None), key
+    choice = None
+    if dets is None:                    # not given: choose automatically
+        if key:                         # the test targets' detectors were checked by eye
+            dets = TARGET_INFO[key]["detectors"]
+            choice = {"detectors": dets, "method": "verified",
+                      "reason": "test target: detectors chosen and checked by hand"}
+        else:
+            choice = _auto_choice(tgt, fov)
+            dets = choice["detectors"]
+    return (dets or None), key, choice
 
 
 @app.get("/api/targets")
@@ -165,8 +219,11 @@ def suggest(q: str = "", limit: int = Query(8, ge=1, le=20)):
 
 @app.get("/api/famous")
 def famous():
-    """Well-known stars for the quick-access row."""
-    return names.famous()
+    """Well-known stars for the quick-access row: only those already built, so every button is instant.
+
+    More appear by themselves as their frames are built (make_frames.py --detectors auto).
+    """
+    return [s for s in names.famous() if _ready(s["query"])]
 
 
 @app.get("/api/frames")
@@ -174,26 +231,48 @@ def get_frames(target: str | None = None, ra: float | None = None, dec: float | 
                fov: float = Query(frames.DEFAULT_FOV_DEG), detectors: str | None = None,
                refresh: bool = False):
     tgt = _resolve(target, ra, dec)
-    dets, key = _settings(tgt, detectors, fov)
+    dets, key, choice = _settings(tgt, detectors, fov)
     folder = frames.folder_name(tgt.name, dets, fov)
+    cap = MAX_IMAGES if dets and len(dets) == 1 else MAX_IMAGES_MULTI
     out_dir = FRAMES_DIR / folder
     meta_file = out_dir / "frames.json"
 
     with _lock(folder):                 # two requests for the same field build it once
         if refresh or not meta_file.exists():
             # tgt.name is the resolved name, or "ra dec" for coordinates; both parse back.
-            cs = get_cutouts(tgt.name, size_deg=max(fov, frames.DEFAULT_FOV_DEG),
-                             detectors=dets, max_images=MAX_IMAGES)
+            cs = _archive(get_cutouts, tgt.name, size_deg=max(fov, frames.DEFAULT_FOV_DEG),
+                          detectors=dets, max_images=cap)
             if not cs.cutouts:
                 raise HTTPException(404, "No SPHEREx images cover this position yet "
                                          f"(detectors {dets or 'all'}).")
             frames.write(frames.stack_epochs(cs, fov_deg=fov), out_dir)
         meta = json.loads(meta_file.read_text())
     meta = _with_urls(meta, folder)
-    meta["detectors_used"] = dets or [1, 2, 3, 4, 5, 6]
+    meta["detectors_used"] = meta["frames"][0]["detectors"] if meta["frames"] else (dets or [1, 2, 3, 4, 5, 6])
+    if choice:
+        meta["detector_choice"] = choice
     if key:
         meta["test_target"] = {"key": key, **TARGET_INFO[key]}
     return meta
+
+
+@app.get("/api/spectrum")
+def get_spectrum(target: str | None = None, ra: float | None = None, dec: float | None = None,
+                 refresh: bool = False):
+    """The target's brightness in every SPHEREx image (wavelength, flux, epoch), plus each
+    epoch compared with the average at matched wavelengths. See spherex_data/spectrum.py.
+
+    Built once and kept in frames/_spectra/. The first build for a new target downloads
+    images from all six detectors, so it can take a few minutes.
+    """
+    tgt = _resolve(target, ra, dec)
+    path = SPECTRA_DIR / (frames.folder_name(tgt.name, frames.DEFAULT_DETECTORS, None) + ".json")
+    with _lock("spectrum:" + path.name):
+        if refresh or not path.exists():
+            s = _archive(spectrum.build, tgt.name)   # saved even when empty (page explains)
+            SPECTRA_DIR.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(s))
+        return json.loads(path.read_text())
 
 
 @app.get("/api/images")
@@ -201,8 +280,8 @@ def images(target: str | None = None, ra: float | None = None, dec: float | None
            detectors: str | None = None):
     """Every individual image: time, detector, wavelength at the target, quality flags."""
     tgt = _resolve(target, ra, dec)
-    dets, _ = _settings(tgt, detectors, frames.DEFAULT_FOV_DEG)
-    cs = get_cutouts(tgt.name, detectors=dets, max_images=MAX_IMAGES)
+    dets, _, _ = _settings(tgt, detectors, frames.DEFAULT_FOV_DEG)
+    cs = _archive(get_cutouts, tgt.name, detectors=dets, max_images=MAX_IMAGES)
     return JSONResponse(cs.metadata())
 
 

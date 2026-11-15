@@ -107,6 +107,19 @@
   .warn { color: #a15c00; }
   kbd { background: var(--panel-2); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font-size: 12px; }
 
+  .spec { margin: 16px auto 0; max-width: 640px; }
+  .spec h2 .note { text-transform: none; letter-spacing: 0; font-weight: 400; margin-left: 6px; }
+  .spec h3 { font-size: 13px; font-weight: 700; margin: 14px 0 4px; }
+  .spec svg { width: 100%; height: auto; display: block; }
+  .spec svg text { font: 11px Roboto, sans-serif; fill: var(--muted); }
+  .spec svg .axis { stroke: var(--line); }
+  .spec svg .grid { stroke: #f2edd6; }
+  .spec svg .one { stroke: var(--accent-ink); stroke-dasharray: 4 3; }
+  .speclegend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .speclegend span { display: inline-flex; align-items: center; gap: 5px; cursor: default; }
+  .speclegend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .speclegend .cur { color: var(--text); font-weight: 700; }
+  .specsum { margin: 0 0 4px; font-size: 14px; }
   body.embed header, body.embed .targets, body.embed aside { display: none; }
   body.embed main { grid-template-columns: 1fr; padding: 8px; }
 </style>
@@ -121,7 +134,7 @@
       <ul id="suggest" class="suggest" role="listbox" hidden></ul>
     </div>
     <select id="dets" aria-label="Detectors" title="SPHEREx detectors (wavelength bands)">
-      <option value="">Detectors: best</option>
+      <option value="">Detectors: auto</option>
       <option value="1">D1 · 0.75–1.1 µm</option>
       <option value="2">D2 · 1.1–1.6 µm</option>
       <option value="3">D3 · 1.6–2.4 µm</option>
@@ -135,6 +148,7 @@
       <option value="0.05">3′ field</option>
       <option value="0.1" selected>6′ field</option>
       <option value="0.2">12′ field (slow)</option>
+      <option value="0.25">15′ field (slowest)</option>
     </select>
     <button class="primary" type="submit">Show</button>
   </form>
@@ -166,7 +180,7 @@
         <button id="play" title="Play / pause (space)" aria-label="Play or pause">⏸</button>
         <button id="next" title="Next epoch (→)" aria-label="Next epoch">▶</button>
       </div>
-      <label>Speed <input id="speed" type="range" min="150" max="2000" step="50" value="600" aria-label="Milliseconds per frame"></label>
+      <label>Speed <input id="speed" type="range" min="150" max="2000" step="50" value="1550" aria-label="Playback speed (right = faster)"></label>
       <div class="spacer"></div>
       <div class="group" role="group" aria-label="Display mode">
         <button id="m-frames" data-mode="frames" title="Each epoch's stacked image">Frames</button>
@@ -181,6 +195,16 @@
       <button id="copy" title="Copy a link to exactly this view">Copy link</button>
     </div>
     <div class="strip" id="strip"></div>
+    <div class="card spec" id="speccard" hidden>
+      <h2>Spectrum <span class="note" id="spechead"></span></h2>
+      <p class="note" id="specstatus"></p>
+      <svg id="specplot" viewBox="0 0 640 230" role="img" aria-label="Brightness against wavelength for each epoch"></svg>
+      <div class="speclegend" id="speclegend"></div>
+      <h3>Change at matched wavelengths</h3>
+      <p class="specsum" id="specsum"></p>
+      <svg id="specratio" viewBox="0 0 640 150" role="img" aria-label="This epoch compared with the average of all epochs, wavelength bin by bin"></svg>
+      <p class="note" id="specnote"></p>
+    </div>
   </section>
 
   <aside>
@@ -206,13 +230,18 @@ const HELP = {
   pair: "Last epoch minus first. A moving object shows as a black spot (where it was) next to a white spot (where it is now). A star that brightened shows white; one that faded shows black.",
 };
 
+// ---------- speed: slider right = faster; URL "speed" stays milliseconds per frame ----------
+const SPEED_SUM = 150 + 2000;   // slider min + max
+const frameMs = () => SPEED_SUM - +$("speed").value;
+const setFrameMs = (ms) => ($("speed").value = SPEED_SUM - Math.min(2000, Math.max(150, ms)));
+
 // ---------- URL <-> state ----------
 function readUrl() {
   const p = new URLSearchParams(location.search);
   const q = {};
   for (const k of ["target", "ra", "dec", "fov", "detectors"]) if (p.get(k)) q[k] = p.get(k);
   if (["frames", "diff", "pair"].includes(p.get("mode"))) S.mode = p.get("mode");
-  if (p.get("speed")) $("speed").value = p.get("speed");
+  if (p.get("speed")) setFrameMs(+p.get("speed"));
   if (p.get("embed") === "1") document.body.classList.add("embed");
   return q;
 }
@@ -220,7 +249,7 @@ function writeUrl() {
   const p = new URLSearchParams();
   for (const [k, v] of Object.entries(S.query)) if (v !== undefined && v !== "") p.set(k, v);
   if (S.mode !== "frames") p.set("mode", S.mode);
-  if ($("speed").value !== "600") p.set("speed", $("speed").value);
+  if (frameMs() !== 600) p.set("speed", frameMs());
   if (document.body.classList.contains("embed")) p.set("embed", "1");
   history.replaceState(null, "", "?" + p.toString());
 }
@@ -250,6 +279,7 @@ async function load(q) {
   if (!q.target && !(q.ra && q.dec)) return;
   S.query = q; formFromQuery(q); writeUrl();
   const myReq = ++S.req;
+  S.spec = null; $("speccard").hidden = true;
   stop();
   const t0 = Date.now();
   const tick = () => {
@@ -297,20 +327,40 @@ function preload(m) {
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 // ---------- display ----------
+const DET_UM = { 1: "0.75–1.1", 2: "1.1–1.6", 3: "1.6–2.4", 4: "2.4–3.8", 5: "3.8–4.4", 6: "4.4–5.0" };
+function detName(ds) {                  // [2] -> "D2 · 1.1–1.6 µm"; [5, 6] -> "D5+6 · 3.8–5.0 µm"
+  if (!ds || !ds.length) return "";
+  if (ds.length === 6) return "all detectors";
+  if (ds.at(-1) - ds[0] !== ds.length - 1) return `D${ds.join("+")}`;   // not one continuous range
+  const lo = DET_UM[ds[0]].split("–")[0], hi = DET_UM[ds.at(-1)].split("–")[1];
+  return `D${ds.join("+")} · ${lo}–${hi} µm`;
+}
+function showAutoChoice(m) {            // "Detectors: auto" also says what auto picked
+  const opt = $("dets").querySelector('option[value=""]');
+  opt.textContent = !S.query.detectors && m.detectors_used ? `Detectors: auto → ${detName(m.detectors_used)}` : "Detectors: auto";
+}
 function show(m) {
   S.meta = m; S.idx = 0;
+  showAutoChoice(m);
   // strip of epochs
   $("strip").innerHTML = "";
   m.frames.forEach((f, i) => {
     const b = document.createElement("button");
-    b.innerHTML = `Epoch ${f.epoch} · ${f.mid_year.toFixed(2)}<small>${f.start.slice(0, 10)} · ${f.n_frames} images</small>`;
+    b.innerHTML = `Epoch ${f.epoch} · ${f.mid_year.toFixed(2)}<small>${dateSpan(f.start, f.end)} · ${f.n_frames} images</small>`;
+    b.title = `${f.start.slice(0, 10)} to ${f.end.slice(0, 10)}`;
     b.onclick = () => { pause(); S.idx = i; if (S.mode === "pair") setMode("frames"); render(); };
     $("strip").appendChild(b);
   });
   scaleBar();
   info(m);
   render();
+  loadSpectrum(S.query, S.req);
   if (m.n_epochs > 1 && S.mode !== "pair") play(); else pause();
+}
+function dateSpan(start, end) {          // "2025-04-24 → 06-15"; the year again only if it changes
+  const a = start.slice(0, 10), b = end.slice(0, 10);
+  if (a === b) return a;
+  return `${a} → ${b.slice(0, 4) === a.slice(0, 4) ? b.slice(5) : b}`;
 }
 function scaleBar() {
   // A 1′ (or 2′ on wide fields) bar, sized to the viewer's current width.
@@ -328,7 +378,9 @@ function info(m) {
     ["RA, Dec", `${m.ra.toFixed(5)}°, ${m.dec >= 0 ? "+" : ""}${m.dec.toFixed(5)}°`],
     ["Epochs", `${m.n_epochs} (${m.frames[0].mid_year.toFixed(2)}–${m.frames[m.frames.length - 1].mid_year.toFixed(2)})`],
     ["Images", m.frames.reduce((a, f) => a + f.n_frames, 0)],
-    ["Detectors", m.detectors_used.join(", ")],
+    ["Detectors", m.detectors_used.join(", ") +
+      (m.detector_choice ? ` <span class="note">(${m.detector_choice.method === "auto" ? "auto: " : ""}${esc(m.detector_choice.reason)})</span>` : "") +
+      (m.combine ? ` <span class="note">(combined: ${esc(m.combine.method)})</span>` : "")],
     ["Wavelength", lo ? `${lo.toFixed(2)}–${hi.toFixed(2)} µm at the target` : "—"],
     ["Field", `${(m.fov_deg * 60).toFixed(1)}′ · ${m.pixel_arcsec}″ per pixel`],
   ];
@@ -345,7 +397,7 @@ function render() {
     label = `${m.target} · last − first: ${b.mid_year.toFixed(2)} minus ${a.mid_year.toFixed(2)}`;
   } else {
     src = S.mode === "diff" ? f.diff_url : f.url;
-    label = `${m.target} · epoch ${S.idx + 1} of ${m.n_epochs} · ${f.mid_year.toFixed(2)} · ${f.n_frames} images` +
+    label = `${m.target} · ${detName(m.detectors_used)} · epoch ${S.idx + 1} of ${m.n_epochs} · ${f.mid_year.toFixed(2)} · ${f.n_frames} images` +
       (S.mode === "diff" ? " · minus median" : "");
   }
   $("frame").src = src;
@@ -355,6 +407,137 @@ function render() {
   $("modehelp").textContent = HELP[S.mode];
   const many = m.n_epochs > 1 && S.mode !== "pair";
   for (const id of ["prev", "play", "next"]) $(id).disabled = !many;
+  if (S.spec) drawSpectrum();
+}
+
+// ---------- spectrum (live: follows the epoch on screen) ----------
+const EP_COLORS = ["#1f6fb4", "#d1442e", "#2e9e4f", "#8a5cc2", "#e08a00", "#159aa8", "#8c564b", "#d4579e", "#6b6b6b", "#9aa31a"];
+const SVGNS = "http://www.w3.org/2000/svg";
+function svgEl(parent, tag, attrs, text) {
+  const e = document.createElementNS(SVGNS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (text !== undefined) e.textContent = text;
+  parent.appendChild(e);
+  return e;
+}
+function niceStep(span) {
+  const p = Math.pow(10, Math.floor(Math.log10(span))), f = span / p;
+  return (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * p;
+}
+async function loadSpectrum(q, myReq) {
+  S.spec = null;
+  $("speccard").hidden = false;
+  for (const id of ["specplot", "specratio", "speclegend"]) $(id).innerHTML = "";
+  for (const id of ["spechead", "specsum", "specnote"]) $(id).textContent = "";
+  $("specstatus").textContent = "Measuring the target in every SPHEREx image… (a new target can take a few minutes the first time)";
+  const p = q.target ? { target: q.target } : { ra: q.ra, dec: q.dec };
+  try {
+    const r = await fetch("/api/spectrum?" + new URLSearchParams(p));
+    const b = await r.json().catch(() => ({}));
+    if (myReq !== S.req) return;
+    if (!r.ok) throw new Error(errText(b) || `Server error ${r.status}`);
+    S.spec = b; $("specstatus").textContent = "";
+    drawSpectrum();
+  } catch (e) {
+    if (myReq !== S.req) return;
+    $("specstatus").textContent = "Spectrum unavailable: " + e.message;
+  }
+}
+function specEpoch() {               // the spectrum epoch nearest the frame on screen
+  const sp = S.spec, m = S.meta;
+  if (!sp || !sp.epochs.length) return -1;
+  if (!m || S.mode === "pair") return sp.epochs.length - 1;
+  const y = m.frames[S.idx].mid_year;
+  let best = 0;
+  sp.epochs.forEach((e, i) => { if (Math.abs(e.mid_year - y) < Math.abs(sp.epochs[best].mid_year - y)) best = i; });
+  return best;
+}
+function drawSpectrum() {
+  const sp = S.spec; if (!sp) return;
+  if (!sp.points.length) {
+    $("specstatus").textContent = "No usable measurements: the target is too bright (saturated with no clear sky around it) or off the images.";
+    for (const id of ["specplot", "specratio", "speclegend"]) $(id).innerHTML = "";
+    $("specsum").textContent = ""; $("specnote").textContent = "";
+    return;
+  }
+  const cur = specEpoch(), ce = sp.epochs[cur], color = (i) => EP_COLORS[i % EP_COLORS.length];
+  const idx = {}; sp.epochs.forEach((e, i) => (idx[e.epoch] = i));
+  $("spechead").textContent = `· ${sp.points.length} measurements · detector${sp.detectors.length > 1 ? "s" : ""} ${sp.detectors.join(", ")}` +
+    (sp.partial ? " (other detectors unavailable right now)" : "");
+
+  // shared wavelength axis (log), so the two charts line up
+  const wl = sp.points.map((p) => p.wavelength_um), lo = Math.min(...wl) * 0.97, hi = Math.max(...wl) * 1.03;
+  const L = 52, R = 628, X = (w) => L + (Math.log(w / lo) / Math.log(hi / lo)) * (R - L);
+  const xticks = [0.75, 1, 1.25, 1.5, 2, 2.5, 3, 4, 5].filter((t) => t >= lo && t <= hi);
+  const xAxis = (svg, top, bottom) => {
+    for (const t of xticks) {
+      svgEl(svg, "line", { class: "grid", x1: X(t), x2: X(t), y1: top, y2: bottom });
+      svgEl(svg, "text", { x: X(t), y: bottom + 14, "text-anchor": "middle" }, t);
+    }
+    svgEl(svg, "line", { class: "axis", x1: L, x2: R, y1: bottom, y2: bottom });
+  };
+
+  // 1. brightness vs wavelength
+  const svg = $("specplot"); svg.innerHTML = "";
+  const T = 10, B = 196, good = sp.points.filter((p) => !p.saturated);
+  const ys = (good.length ? good : sp.points).map((p) => p.flux_mjy);
+  let ymin = Math.min(0, ...ys) * 1.1, ymax = Math.max(...ys) * 1.1;
+  if (!(ymax > ymin)) ymax = ymin + 1;
+  const Y = (f) => B - ((Math.min(Math.max(f, ymin), ymax) - ymin) / (ymax - ymin)) * (B - T);
+  const st = niceStep((ymax - ymin) / 4);
+  for (let v = Math.ceil(ymin / st) * st; v <= ymax; v += st) {
+    svgEl(svg, "line", { class: "grid", x1: L, x2: R, y1: Y(v), y2: Y(v) });
+    svgEl(svg, "text", { x: L - 6, y: Y(v) + 4, "text-anchor": "end" }, +v.toPrecision(3));
+  }
+  xAxis(svg, T, B);
+  svgEl(svg, "text", { x: (L + R) / 2, y: 226, "text-anchor": "middle" }, "wavelength (µm)");
+  svgEl(svg, "text", { x: 12, y: (T + B) / 2, "text-anchor": "middle", transform: `rotate(-90 12 ${(T + B) / 2})` }, "flux (mJy)");
+  const pts = [...sp.points].sort((a, b) => (idx[a.epoch] === cur) - (idx[b.epoch] === cur));   // current on top
+  for (const p of pts) {
+    const i = idx[p.epoch], on = i === cur, c = color(i);
+    const dot = svgEl(svg, "circle", {
+      cx: X(p.wavelength_um), cy: Y(p.flux_mjy), r: on ? 3.6 : 2.3,
+      fill: p.saturated ? "none" : c, stroke: c, "stroke-width": p.saturated ? 1.2 : 0,
+      opacity: on ? 0.95 : 0.22,
+    });
+    svgEl(dot, "title", {}, `${sp.epochs[i].mid_year.toFixed(2)} · D${p.detector} · ${p.wavelength_um.toFixed(3)} µm · ` +
+      `${p.flux_mjy.toFixed(3)} ± ${p.err_mjy.toFixed(3)} mJy${p.saturated ? " · saturated" : p.flagged ? " · flagged" : ""}`);
+  }
+  $("speclegend").innerHTML = sp.epochs.map((e, i) =>
+    `<span class="${i === cur ? "cur" : ""}"><i style="background:${color(i)}"></i>${e.mid_year.toFixed(2)}</span>`).join("") +
+    (sp.n_saturated ? `<span><i style="border:1.5px solid var(--muted);background:none"></i>saturated</span>` : "");
+
+  // 2. this epoch vs the average of all epochs, bin by bin
+  const rs = $("specratio"); rs.innerHTML = "";
+  const word = (r) => Math.abs(r - 1) < 0.02 ? "the same as" : r > 1 ? `${Math.round((r - 1) * 100)}% brighter than` : `${Math.round((1 - r) * 100)}% fainter than`;
+  if (!sp.bins.length) {
+    rs.style.display = "none";
+    $("specsum").textContent = "No fair comparison is possible here: " + (sp.n_saturated > sp.points.length / 2
+      ? "the target is saturated in most images." : "no two epochs cover the same wavelengths with the target clearly detected.");
+  } else {
+    rs.style.display = "";
+    const mt = ce.matched;
+    $("specsum").innerHTML = mt
+      ? `<strong>${ce.mid_year.toFixed(2)}:</strong> ${word(mt.ratio)} the average of all epochs (±${Math.round(mt.spread * 100)}%), ` +
+        `from ${mt.n_bins} wavelength bins between ${mt.range_um[0].toFixed(2)} and ${mt.range_um[1].toFixed(2)} µm.`
+      : `<strong>${ce.mid_year.toFixed(2)}:</strong> no wavelengths in common with the other epochs.`;
+    const all = sp.bins.flatMap((b) => Object.values(b.ratio));
+    const rlo = Math.min(0.7, ...all) * 0.97, rhi = Math.max(1.3, ...all) * 1.03, T2 = 8, B2 = 124;
+    const Y2 = (r) => B2 - ((r - rlo) / (rhi - rlo)) * (B2 - T2);
+    for (const v of [0.5, 0.75, 1, 1.25, 1.5, 2].filter((v) => v >= rlo && v <= rhi))
+      svgEl(rs, "text", { x: L - 6, y: Y2(v) + 4, "text-anchor": "end" }, `×${v}`);
+    xAxis(rs, T2, B2);
+    for (const b of sp.bins) {
+      const r = b.ratio[String(ce.epoch)]; if (r === undefined) continue;
+      const x0 = X(b.lo_um), w = Math.max(3, X(b.hi_um) - x0 - 1);
+      const bar = svgEl(rs, "rect", { x: x0, width: w, y: Math.min(Y2(r), Y2(1)), height: Math.max(1, Math.abs(Y2(r) - Y2(1))), fill: color(cur), opacity: 0.8 });
+      svgEl(bar, "title", {}, `${b.lo_um.toFixed(2)}–${b.hi_um.toFixed(2)} µm: ×${r.toFixed(2)} (average ${b.ref_mjy.toFixed(3)} mJy)`);
+    }
+    svgEl(rs, "line", { class: "one", x1: L, x2: R, y1: Y2(1), y2: Y2(1) });
+    svgEl(rs, "text", { x: R, y: Y2(1) - 4, "text-anchor": "end" }, "average of all epochs");
+  }
+  $("specnote").textContent = sp.note + (sp.n_flagged ? ` ${sp.n_flagged} points were flagged near saturation.` : "") +
+    " Faint moving targets can pick up light from background stars they pass.";
 }
 
 // ---------- player ----------
@@ -362,7 +545,7 @@ function step(d) { const n = S.meta?.frames.length || 1; S.idx = (S.idx + d + n)
 function play() {
   stop(); S.playing = true; $("play").textContent = "⏸";
   if (!S.meta || S.meta.n_epochs < 2 || S.mode === "pair") return;
-  S.timer = setInterval(() => step(1), +$("speed").value);
+  S.timer = setInterval(() => step(1), frameMs());
 }
 function stop() { clearInterval(S.timer); S.timer = null; }
 function pause() { stop(); S.playing = false; $("play").textContent = "⏵"; }

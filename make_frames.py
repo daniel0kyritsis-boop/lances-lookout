@@ -4,6 +4,7 @@
     python make_frames.py "Barnard's Star"
     python make_frames.py "WISE J085510.83-071442.5" --detectors 5,6
     python make_frames.py "RW Aur" --fov 0.05
+    python make_frames.py Sirius Vega --detectors auto   # choose like the website
 
 Writes frames/<folder>/ (see frames.folder_name; the API uses the same folders):
 epoch_N.png, diff_N.png, pair.png, stacks.fits, frames.json, blink.gif, diff_blink.gif.
@@ -14,7 +15,7 @@ import time
 
 from astropy import log
 
-from spherex_data import TEST_TARGETS, frames, get_cutouts
+from spherex_data import TEST_TARGETS, best, frames, get_cutouts
 
 log.setLevel("WARNING")   # SPHEREx headers trigger a long, harmless SIP note per file
 
@@ -22,14 +23,16 @@ log.setLevel("WARNING")   # SPHEREx headers trigger a long, harmless SIP note pe
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("targets", nargs="*", help="names or 'ra dec'; default = the 5 test targets")
-    ap.add_argument("--detectors", default="2", help="e.g. 2 or 5,6 (blank = all)")
+    ap.add_argument("--detectors", default="2",
+                    help="e.g. 2 or 5,6; 'all' = every detector, combined in noise units; "
+                         "'auto' = choose like the website does and remember the choice")
     ap.add_argument("--fov", type=float, default=None, help="field of view, deg (default 0.1)")
     ap.add_argument("--out", default="frames")
-    ap.add_argument("--max-images", type=int, default=150,
-                    help="cap per target, spread evenly in time (same as the website)")
+    ap.add_argument("--max-images", type=int, default=None,
+                    help="cap per target, spread evenly in time (default as the website: "
+                         "150 for one detector, 240 for several)")
     a = ap.parse_args()
 
-    dets = [int(d) for d in a.detectors.split(",") if d] or None
     fov = a.fov or frames.DEFAULT_FOV_DEG
     names = a.targets or list(TEST_TARGETS.values())
     failed = []
@@ -37,8 +40,17 @@ def main():
         t0 = time.time()
         for attempt in range(4):           # IRSA sometimes answers 502 for a minute or two
             try:
+                if a.detectors == "auto":
+                    choice = best.remembered_choice(name, f"{a.out}/_auto")
+                    if choice["method"] == "fallback":
+                        raise RuntimeError(choice["reason"])
+                    dets = choice["detectors"]
+                    print(f"{name}: detectors {dets} ({choice['reason']})", flush=True)
+                else:
+                    dets = None if a.detectors in ("", "all") else [int(d) for d in a.detectors.split(",")]
+                cap = a.max_images or (150 if dets and len(dets) == 1 else 240)
                 cs = get_cutouts(name, size_deg=max(fov, frames.DEFAULT_FOV_DEG), detectors=dets,
-                                 max_images=a.max_images)
+                                 max_images=cap)
                 break
             except Exception as e:
                 print(f"{name}: attempt {attempt + 1} failed: {str(e).splitlines()[0]}", flush=True)

@@ -78,3 +78,25 @@ def test_write_produces_files_for_the_page(tmp_path):
         assert (tmp_path / f).exists(), f
     assert json.loads((tmp_path / "frames.json").read_text()) == json.loads(json.dumps(meta))
     assert [f["diff_file"] for f in meta["frames"]] == ["diff_0.png", "diff_1.png"]
+
+
+def test_merge_epochs_until_every_detector_present():
+    from spherex_data.core import CutoutSet
+    # detector pairs arrive in different short epochs, as near the ecliptic poles
+    layout = {0: [3, 6], 1: [1, 4, 2, 5], 2: [1, 4], 3: [2, 5, 3, 6], 4: [1, 4]}
+    cs = CutoutSet("t", 0, 0, 0.1, [_cutout(e, d) for e, ds in layout.items() for d in ds], [])
+    merged = frames._merge_until_complete(cs)
+    groups = {}
+    for c in merged.cutouts:
+        groups.setdefault(c.epoch, set()).add(c.detector)
+    assert groups == {0: {1, 2, 3, 4, 5, 6}, 1: {1, 2, 3, 4, 5, 6}}
+
+
+def _cutout(epoch, detector):
+    import numpy as np
+    from astropy.wcs import WCS
+    from spherex_data.core import Cutout
+    z = np.zeros((2, 2), np.float32)
+    return Cutout(url="", mjd=float(epoch), detector=detector, epoch=epoch, image=z, flags=z,
+                  variance=None, zodi=None, header=None, wcs=WCS(naxis=2), target_px=None,
+                  wavelength_um=None, version=None)

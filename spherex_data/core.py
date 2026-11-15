@@ -100,12 +100,17 @@ class CutoutSet:
 
 def get_cutouts(target: str | tuple[float, float], size_deg: float = config.DEFAULT_SIZE_DEG,
                 detectors: list[int] | None = None, max_images: int | None = None,
-                progress=None) -> CutoutSet:
+                progress=None, sample_per_detector: int | None = None,
+                partial_ok: bool = False) -> CutoutSet:
     """Fetch all SPHEREx cutouts of a position.
 
     target: a name ("Barnard's Star"), a coordinate string, or (ra, dec) in degrees.
     detectors: subset of 1-6 (None = all). Fewer detectors = faster.
     max_images: cap the download for big queries (spread evenly across time).
+    sample_per_detector: only fetch this many images per detector, spread across
+        time (a quick look, used to choose the best detector).
+    partial_ok: if IRSA's search is down, accept cached image lists for only some
+        detectors (used for spectra, where some bands beat none).
     """
     if not 0 < size_deg <= config.MAX_SIZE_DEG:
         raise ValueError(f"size_deg must be between 0 and {config.MAX_SIZE_DEG}")
@@ -114,7 +119,7 @@ def get_cutouts(target: str | tuple[float, float], size_deg: float = config.DEFA
     # Find the images first (position as of today is close enough to find them),
     # then centre every cutout on where the object was mid-way through the data.
     first = tgt.position_at(Time.now())
-    records = find_images(first.ra.deg, first.dec.deg, detectors)
+    records = find_images(first.ra.deg, first.dec.deg, detectors, partial_ok=partial_ok)
     if not records:
         return CutoutSet(tgt.name, first.ra.deg, first.dec.deg, size_deg, [], [])
     mid = Time(statistics.median(r.mjd for r in records), format="mjd")
@@ -122,10 +127,28 @@ def get_cutouts(target: str | tuple[float, float], size_deg: float = config.DEFA
     ra, dec = centre.ra.deg, centre.dec.deg
 
     if max_images and len(records) > max_images:
-        step = len(records) / max_images
-        records = [records[int(i * step)] for i in range(max_images)]
+        # Cap each detector separately. Images come in sets of six (one exposure, all
+        # detectors), so taking every Nth image overall can skip some detectors entirely.
+        dets = sorted({r.detector for r in records})
+        per = max(1, max_images // len(dets))
+        keep = []
+        for d in dets:
+            mine = [r for r in records if r.detector == d]
+            if len(mine) > per:
+                step = len(mine) / per
+                mine = [mine[int(i * step)] for i in range(per)]
+            keep += mine
+        records = sorted(keep, key=lambda r: r.mjd)
 
     labels = epochs.group_into_epochs([r.mjd for r in records])
+    if sample_per_detector:
+        keep = set()
+        for d in sorted({r.detector for r in records}):
+            idx = [i for i, r in enumerate(records) if r.detector == d]
+            n = min(sample_per_detector, len(idx))
+            keep.update(idx[int((k + 0.5) * len(idx) / n)] for k in range(n))
+        records = [r for i, r in enumerate(records) if i in keep]
+        labels = [l for i, l in enumerate(labels) if i in keep]
     urls = [r.cutout_url(ra, dec, size_deg) for r in records]
     files = fetch_many(urls, progress=progress)
 

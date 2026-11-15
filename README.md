@@ -43,9 +43,19 @@ A new target takes about 1–3 minutes the first time, then loads instantly.
   or click). It tolerates typos (`betelguese` → Betelgeuse) and knows common aliases
   (`alpha cen`, `GJ 699`, `WISE 0855`). A name that isn't found gets a "Did you mean"
   list. Any name SIMBAD knows can still be searched; the list only drives suggestions.
-- **Famous stars:** a row of quick-access buttons (Sirius, Betelgeuse, Proxima
-  Centauri, Mira, TRAPPIST-1 …) under the test targets. The brightest ones saturate
-  SPHEREx's detectors, so they show as large discs with blank cores.
+- **Spectrum (live):** under the viewer, the target's brightness in every SPHEREx image,
+  plotted against wavelength and coloured by epoch. The epoch on screen is highlighted
+  and follows the blink. Below it, *Change at matched wavelengths* compares that epoch
+  with the average of all epochs bin by bin (bins ~5% wide in wavelength), so a
+  brightness change isn't confused with epochs sampling different wavelengths. RW Aur:
+  0.75× the average in 2025.69, then 1.00 and 1.02. eps Ind B (not variable): within
+  ±3%. Saturated points (blank pixels) are drawn hollow and left out.
+- **Famous stars:** a row of quick-access buttons under the test targets, showing only
+  the stars already built, so every button loads instantly (Sirius, Betelgeuse,
+  Polaris and Proxima Centauri at present). The list in `spherex_data/names.py` has
+  17; the others appear once built with `make_frames.py … --detectors auto`. The
+  brightest ones saturate SPHEREx's detectors, so they show as large discs with blank
+  cores.
 - **Modes:**
   - *Frames*: each epoch's stacked image.
   - *Difference*: each epoch minus the median of all epochs. Anything constant cancels
@@ -53,7 +63,19 @@ A new target takes about 1–3 minutes the first time, then loads instantly.
   - *Pair*: last epoch minus first. A moving object is a black spot (where it was)
     next to a white spot (where it is now).
 - **Detectors** pick the wavelength band (D1 0.75–1.1 µm … D6 4.4–5.0 µm).
-  "Best" uses detector 2 except for WISE 0855, which uses 5–6.
+  - *Auto* (the default) picks the band where the target stands out most above the
+    noise without its core saturating. It samples 3 small images per detector, so a
+    new target's first load takes ~20 s longer; the choice is remembered. If the
+    target is faint everywhere, it combines the bands where it's detected; if it
+    saturates everywhere, it takes the least saturated band. The info card says
+    which detector was chosen and why. The five test targets keep detectors chosen
+    and checked by hand (D2; D5+6 for WISE 0855).
+  - *All* (or any several detectors) stacks each detector separately, then averages
+    them weighted by their noise, so quiet detectors count more. SPHEREx's detectors
+    work in pairs (1+4, 2+5, 3+6) that see neighbouring patches of sky, so a star
+    reaches every band only over a few days; near the ecliptic poles, short epochs
+    are merged until each contains every detector, so every frame has the same mix
+    of bands.
 - **Keys:** `space` play/pause, `←` `→` step, `d` next mode. Hover over the image for RA/Dec.
 - **Links:** the address bar always describes the current view, so it can be
   shared or bookmarked. **Copy link** copies it.
@@ -65,9 +87,9 @@ URL parameters (also usable to embed the viewer in another page):
 | `target` | `Barnard's Star` | Name or `"ra dec"` |
 | `ra`, `dec` | `269.452`, `4.693` | Coordinates in degrees, instead of `target` |
 | `fov` | `0.05` | Field of view in degrees (0.02–0.25; default 0.1) |
-| `detectors` | `5,6` or `all` | Which detectors to use |
+| `detectors` | `5,6` or `all` | Which detectors to use (default: chosen automatically) |
 | `mode` | `diff` | `frames`, `diff` or `pair` |
-| `speed` | `400` | Milliseconds per frame |
+| `speed` | `400` | Milliseconds per frame (the slider shows it as faster to the right) |
 | `embed` | `1` | Hide everything except the viewer and its controls |
 
 ## How it works
@@ -80,7 +102,9 @@ URL parameters (also usable to embed the viewer in another page):
 | Download | `spherex_data/fetch.py` | IRSA's cutout service, 10 downloads in parallel with retries. Cutouts are cached on disk; failed downloads are reported, not fatal. |
 | Epochs | `spherex_data/epochs.py` | A new epoch starts after a gap of 30+ days (SPHEREx maps the whole sky every ~6 months). Near the ecliptic poles the same spot is seen almost daily, so long gap-free runs are cut into ~30-day bins. |
 | Quality flags | `spherex_data/flags.py` | Bit names and meanings are read from each file's FLAGS header (`MSKNnnnn` / `MSKDnnnn`). `SOURCE` and `FULLSAMPLE` are informational and not counted as problems. |
-| Frames | `spherex_data/frames.py` | Per cutout: subtract the zodiacal-light model, blank broken pixels, reproject onto one north-up grid (3.1″ pixels), subtract the sky. Then median-stack each epoch and write PNGs, difference images, `stacks.fits` and `frames.json`. |
+| Best detector | `spherex_data/best.py` | Samples each detector, measures the target's S/N and whether its core is saturated (NaN or OVERFLOW/NONLINEAR flags), and applies the rule above. Choices are kept in `frames/_auto/`. |
+| Frames | `spherex_data/frames.py` | Per cutout: subtract the zodiacal-light model, blank broken pixels, reproject onto one north-up grid (3.1″ pixels), subtract the sky. Then median-stack each epoch (several detectors: per detector, then a noise-weighted average) and write PNGs, difference images, `stacks.fits` and `frames.json`. |
+| Spectrum | `spherex_data/spectrum.py` | Aperture photometry (12.4″ radius, local sky subtracted) at the target's position on each image's date, with that image's wavelength. Points are binned in wavelength and each epoch is compared with the all-epoch median per bin (bins need 2+ epochs and S/N ≥ 5). Kept in `frames/_spectra/`. |
 | API | `server.py` | FastAPI. Builds frames on first request and serves them from `frames/` after that. |
 | Web page | `web/index.html` | One self-contained page: search, blink player, modes, URL sync. |
 
@@ -103,7 +127,8 @@ Interactive docs at `/docs` while the server runs.
 |---|---|
 | `GET /api/targets` | The five test targets, their type, best detectors and whether frames are ready |
 | `GET /api/suggest?q=barn` | Star names matching the text so far, with kind and position |
-| `GET /api/famous` | The famous-stars quick-access list |
+| `GET /api/famous` | The famous-stars quick-access list (pre-built stars only) |
+| `GET /api/spectrum?target=…` (or `ra`, `dec`; `refresh=true`) | Every measurement (epoch, detector, wavelength, flux in mJy, saturated/flagged) and each epoch's matched-wavelength change |
 | `GET /api/frames?target=…` (or `ra`, `dec`; optional `fov`, `detectors`, `refresh=true`) | Image URLs for each epoch (`url`, `diff_url`), the pair image, dates, image counts, wavelengths and the grid's WCS |
 | `GET /api/images?target=…` | Every individual image: time, detector, wavelength at the target, quality flags |
 | `GET /frames/<folder>/<file>` | The PNGs and GIFs |
@@ -113,8 +138,9 @@ Interactive docs at `/docs` while the server runs.
 | Script | Use |
 |---|---|
 | `prefetch.py` | Download cutouts into the cache. `--refresh` re-asks IRSA for new images; `--detectors 5,6`; `--out` for the summary file. |
-| `make_frames.py` | Build frames for targets from the cache. Writes to `frames/<folder>/`, the same folders the API uses. |
+| `make_frames.py` | Build frames for targets from the cache. Writes to `frames/<folder>/`, the same folders the API uses. `--detectors auto` chooses like the website; `--detectors all` combines every detector. Retries when IRSA is briefly unavailable. |
 | `plot_epochs.py` | Quick matplotlib figure of a target, one panel per epoch, with the predicted position marked. |
+| `make_spectra.py` | Pre-build spectra into `frames/_spectra/` (default: the five test targets). |
 | `build_names.py` | Rebuild `spherex_data/star_names.json` (the suggestion list) from the IAU Catalog of Star Names plus the extras listed in the script. Star names: IAU WGSN, CC BY 4.0. |
 
 From Python:
@@ -187,6 +213,23 @@ The tests use synthetic FITS files and fake archive responses, so they need no n
 - **Positions in the images are only accurate to one grid pixel (3.1″)**, because
   movement is judged by eye from the stacked images. WISE 0855's last epoch overlaps
   a background star.
+- **IRSA outages.** If IRSA's image search is down, the site uses image lists it
+  has cached (even old ones) and the pre-built targets still work, but a target it
+  has never seen can't be built, and *Auto* falls back to detector 2 (not remembered,
+  so it's retried later). Searches give up after 30 s, and after a failure IRSA
+  isn't asked again for 5 minutes. A target already built on detector 2 is shown
+  straight away instead of waiting to compare detectors.
+- **Spectra built during an outage cover only the cached detectors** (the shipped
+  ones were built on 15 Nov 2026 while IRSA's search was down: detector 2 for most;
+  2, 5 and 6 for WISE 0855). Rebuild with `/api/spectrum?…&refresh=true` or
+  `make_spectra.py` when IRSA is up.
+- **Spectra of saturated or faint moving targets.** Saturated stars give no
+  comparison. A faint mover can pick up light from background stars it passes
+  (WISE 0855's 1–1.6 µm points are a background star; its 4–5 µm points, ~0.4–0.75
+  mJy, are WISE 0855). Fluxes aren't corrected for light outside the aperture.
+- **Each epoch mixes wavelengths within its band(s).** Ordinary field stars change by
+  only 1–3% between epochs from this, but very red stars (M dwarfs, Miras, brown
+  dwarfs) can change more, so check small brightness changes against neighbours.
 - **Name lookup needs the internet.** astroquery's SIMBAD route currently fails
   (SIMBAD returns 404), so lookups go through CDS Sesame. Coordinates and the five
   test targets work offline.
@@ -201,6 +244,7 @@ deploy_hf.py         publish to a Hugging Face Space
 web/index.html       the website
 prefetch.py          download / refresh cached cutouts
 make_frames.py       build blink frames from the cache
+make_spectra.py      build spectra (brightness vs wavelength per epoch)
 plot_epochs.py       quick-look matplotlib figure
 build_names.py       rebuild the star-name suggestion list
 spherex_data/        the library: targets, query, fetch, epochs, flags, core, frames, config
