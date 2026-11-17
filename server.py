@@ -176,6 +176,22 @@ def _auto_choice(tgt, fov: float = frames.DEFAULT_FOV_DEG) -> dict:
     return best.remembered_choice(tgt.name, AUTO_DIR, _lock("auto:" + tgt.name))
 
 
+PREBUILT_ONLY = ("NASA's IRSA archive isn't answering, so these settings can't be downloaded "
+                 "right now. Showing this target's pre-built view (0.1° field, automatic "
+                 "detectors) instead.")
+
+
+def _prebuilt_view(tgt, key) -> str | None:
+    """The folder of this target's default view, if it's already built (no IRSA needed)."""
+    if key:
+        dets = TARGET_INFO[key]["detectors"]
+    else:
+        choice = _remembered(tgt.name)
+        dets = choice["detectors"] if choice else frames.DEFAULT_DETECTORS
+    folder = frames.folder_name(tgt.name, dets, frames.DEFAULT_FOV_DEG)
+    return folder if (FRAMES_DIR / folder / "frames.json").exists() else None
+
+
 def _ready(name: str) -> bool:
     """Does this name have frames built, so its button loads instantly?"""
     choice = _remembered(name)
@@ -237,17 +253,33 @@ def get_frames(target: str | None = None, ra: float | None = None, dec: float | 
     out_dir = FRAMES_DIR / folder
     meta_file = out_dir / "frames.json"
 
+    fallback_note = None
     with _lock(folder):                 # two requests for the same field build it once
         if refresh or not meta_file.exists():
             # tgt.name is the resolved name, or "ra dec" for coordinates; both parse back.
-            cs = _archive(get_cutouts, tgt.name, size_deg=max(fov, frames.DEFAULT_FOV_DEG),
-                          detectors=dets, max_images=cap)
-            if not cs.cutouts:
-                raise HTTPException(404, "No SPHEREx images cover this position yet "
-                                         f"(detectors {dets or 'all'}).")
-            frames.write(frames.stack_epochs(cs, fov_deg=fov), out_dir)
+            try:
+                cs = _archive(get_cutouts, tgt.name, size_deg=max(fov, frames.DEFAULT_FOV_DEG),
+                              detectors=dets, max_images=cap)
+            except HTTPException as e:
+                # IRSA is down. Rather than fail, show what's already built for this target.
+                if e.status_code != 503:
+                    raise
+                if not meta_file.exists():
+                    prebuilt = _prebuilt_view(tgt, key)
+                    if prebuilt is None:
+                        raise
+                    folder, meta_file, choice = prebuilt, FRAMES_DIR / prebuilt / "frames.json", None
+                    fallback_note = PREBUILT_ONLY
+            else:
+                if not cs.cutouts:
+                    raise HTTPException(404, "No SPHEREx images cover this position yet "
+                                             f"(detectors {dets or 'all'}).")
+                frames.write(frames.stack_epochs(cs, fov_deg=fov), out_dir)
         meta = json.loads(meta_file.read_text())
     meta = _with_urls(meta, folder)
+    if fallback_note:
+        meta["fallback"] = True
+        meta["warning"] = fallback_note
     meta["detectors_used"] = meta["frames"][0]["detectors"] if meta["frames"] else (dets or [1, 2, 3, 4, 5, 6])
     if choice:
         meta["detector_choice"] = choice

@@ -301,6 +301,10 @@ async function load(q) {
     await preload(body);
     if (myReq !== S.req) return;
     clearInterval(clock); overlay("");
+    if (body.fallback) {                // IRSA down: the server sent the pre-built default view
+      const { fov, detectors, ...rest } = q;
+      S.query = rest; formFromQuery(rest); writeUrl();
+    }
     show(body);
   } catch (e) {
     clearInterval(clock);

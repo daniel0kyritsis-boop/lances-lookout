@@ -77,6 +77,23 @@ def test_archive_failure_is_a_clear_503(monkeypatch):
     assert "IRSA archive isn't answering" in r.json()["detail"]
 
 
+def test_archive_down_falls_back_to_prebuilt_view(monkeypatch):
+    from fastapi.testclient import TestClient
+    import server
+
+    def down(*a, **k):
+        raise TimeoutError("IRSA down")
+
+    monkeypatch.setattr(server, "get_cutouts", down)
+    monkeypatch.setattr(server.best, "remembered_choice", lambda *a, **k: {"detectors": [2]})
+    c = TestClient(server.app)
+    for params in ({"fov": 0.25}, {"detectors": "all"}):
+        r = c.get("/api/frames", params={"target": "Polaris", **params})
+        assert r.status_code == 200, r.text
+        assert r.json()["fallback"] is True and r.json()["fov_deg"] == 0.1
+    assert "fallback" not in c.get("/api/frames", params={"target": "Polaris"}).json()
+
+
 def test_single_detector_from_a_cached_pair(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "CACHE_DIR", tmp_path)
     recs = [{"uri": f"u{d}", "mjd": float(d), "bandpass": f"SPHEREx-D{d}", "detector": d} for d in (5, 6)]
