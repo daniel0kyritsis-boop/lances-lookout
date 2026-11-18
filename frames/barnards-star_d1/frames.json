@@ -1,0 +1,85 @@
+{
+  "target": "Barnard's Star",
+  "ra": 269.4462309,
+  "dec": 4.7687513,
+  "fov_deg": 0.1,
+  "width": 117,
+  "height": 117,
+  "pixel_arcsec": 3.1,
+  "wcs": {
+    "CTYPE1": "RA---TAN",
+    "CTYPE2": "DEC--TAN",
+    "CRVAL1": 269.44623094926,
+    "CRVAL2": 4.7687513453895,
+    "CRPIX1": 59.0,
+    "CRPIX2": 59.0,
+    "CDELT1": -0.00086111111111111,
+    "CDELT2": 0.00086111111111111
+  },
+  "display": {
+    "stretch": "asinh",
+    "vmin": -0.1012258380651474,
+    "vmax": 606.3924560546875,
+    "unit": "MJy/sr",
+    "diff_limit": 11.340764045715332
+  },
+  "pair": {
+    "file": "pair.png",
+    "from_epoch": 0,
+    "to_epoch": 2,
+    "note": "later minus earlier: white = brighter now, black = fainter now"
+  },
+  "frames": [
+    {
+      "epoch": 0,
+      "file": "epoch_0.png",
+      "diff_file": "diff_0.png",
+      "n_frames": 24,
+      "start": "2025-08-27T05:06:02Z",
+      "end": "2025-10-01T06:22:54Z",
+      "mid_year": 2025.663,
+      "detectors": [
+        1
+      ],
+      "wavelength_um": [
+        0.746,
+        1.107
+      ],
+      "saturated_px": 0
+    },
+    {
+      "epoch": 1,
+      "file": "epoch_1.png",
+      "diff_file": "diff_1.png",
+      "n_frames": 18,
+      "start": "2026-03-11T02:11:37Z",
+      "end": "2026-03-11T18:29:20Z",
+      "mid_year": 2026.191,
+      "detectors": [
+        1
+      ],
+      "wavelength_um": [
+        0.743,
+        1.09
+      ],
+      "saturated_px": 0
+    },
+    {
+      "epoch": 2,
+      "file": "epoch_2.png",
+      "diff_file": "diff_2.png",
+      "n_frames": 17,
+      "start": "2026-08-23T23:01:13Z",
+      "end": "2026-09-02T06:10:07Z",
+      "mid_year": 2026.649,
+      "detectors": [
+        1
+      ],
+      "wavelength_um": [
+        0.738,
+        1.097
+      ],
+      "saturated_px": 9
+    }
+  ]
+}

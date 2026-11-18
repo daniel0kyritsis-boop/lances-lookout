@@ -1,0 +1,86 @@
+{
+  "target": "Sirius",
+  "ra": 101.2830006,
+  "dec": -16.7250287,
+  "fov_deg": 0.25,
+  "width": 291,
+  "height": 291,
+  "pixel_arcsec": 3.1,
+  "wcs": {
+    "CTYPE1": "RA---TAN",
+    "CTYPE2": "DEC--TAN",
+    "CRVAL1": 101.28300061583,
+    "CRVAL2": -16.725028744523,
+    "CRPIX1": 146.0,
+    "CRPIX2": 146.0,
+    "CDELT1": -0.00086111111111111,
+    "CDELT2": 0.00086111111111111
+  },
+  "display": {
+    "stretch": "asinh",
+    "vmin": -3.354275941848755,
+    "vmax": 1712.062255859375,
+    "unit": "MJy/sr",
+    "diff_limit": 123.79180908203125
+  },
+  "combine": null,
+  "pair": {
+    "file": "pair.png",
+    "from_epoch": 0,
+    "to_epoch": 2,
+    "note": "later minus earlier: white = brighter now, black = fainter now"
+  },
+  "frames": [
+    {
+      "epoch": 0,
+      "file": "epoch_0.png",
+      "diff_file": "diff_0.png",
+      "n_frames": 21,
+      "start": "2025-10-01T02:05:33Z",
+      "end": "2025-11-06T11:48:59Z",
+      "mid_year": 2025.751,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.09,
+        1.643
+      ],
+      "saturated_px": 339
+    },
+    {
+      "epoch": 1,
+      "file": "epoch_1.png",
+      "diff_file": "diff_1.png",
+      "n_frames": 19,
+      "start": "2026-03-24T10:23:53Z",
+      "end": "2026-04-02T03:01:53Z",
+      "mid_year": 2026.233,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.083,
+        1.636
+      ],
+      "saturated_px": 0
+    },
+    {
+      "epoch": 2,
+      "file": "epoch_2.png",
+      "diff_file": "diff_2.png",
+      "n_frames": 17,
+      "start": "2026-10-01T14:46:54Z",
+      "end": "2026-10-02T15:12:19Z",
+      "mid_year": 2026.751,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.101,
+        1.623
+      ],
+      "saturated_px": 357
+    }
+  ]
+}

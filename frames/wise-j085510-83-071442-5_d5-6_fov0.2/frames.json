@@ -1,0 +1,104 @@
+{
+  "target": "WISE J085510.83-071442.5",
+  "ra": 133.7601907,
+  "dec": -7.2422426,
+  "fov_deg": 0.2,
+  "width": 233,
+  "height": 233,
+  "pixel_arcsec": 3.1,
+  "wcs": {
+    "CTYPE1": "RA---TAN",
+    "CTYPE2": "DEC--TAN",
+    "CRVAL1": 133.7601906998,
+    "CRVAL2": -7.2422426357238,
+    "CRPIX1": 117.0,
+    "CRPIX2": 117.0,
+    "CDELT1": -0.00086111111111111,
+    "CDELT2": 0.00086111111111111
+  },
+  "display": {
+    "stretch": "asinh",
+    "vmin": -0.026564592495560646,
+    "vmax": 2.4796319007873535,
+    "unit": "MJy/sr",
+    "diff_limit": 0.05935253028944134
+  },
+  "combine": {
+    "method": "per-detector median, noise-weighted average",
+    "detectors": [
+      5,
+      6
+    ],
+    "noise_mjy_sr": {
+      "5": 0.01087,
+      "6": 0.02036
+    },
+    "weights": {
+      "5": 0.778,
+      "6": 0.222
+    },
+    "dropped": []
+  },
+  "pair": {
+    "file": "pair.png",
+    "from_epoch": 0,
+    "to_epoch": 2,
+    "note": "later minus earlier: white = brighter now, black = fainter now"
+  },
+  "frames": [
+    {
+      "epoch": 0,
+      "file": "epoch_0.png",
+      "diff_file": "diff_0.png",
+      "n_frames": 10,
+      "start": "2025-05-05T16:48:02Z",
+      "end": "2025-05-06T10:48:10Z",
+      "mid_year": 2025.343,
+      "detectors": [
+        5,
+        6
+      ],
+      "wavelength_um": [
+        4.038,
+        4.967
+      ],
+      "saturated_px": 0
+    },
+    {
+      "epoch": 1,
+      "file": "epoch_1.png",
+      "diff_file": "diff_1.png",
+      "n_frames": 24,
+      "start": "2025-11-07T05:47:01Z",
+      "end": "2025-12-13T08:50:04Z",
+      "mid_year": 2025.88,
+      "detectors": [
+        5,
+        6
+      ],
+      "wavelength_um": [
+        3.815,
+        4.979
+      ],
+      "saturated_px": 0
+    },
+    {
+      "epoch": 2,
+      "file": "epoch_2.png",
+      "diff_file": "diff_2.png",
+      "n_frames": 36,
+      "start": "2026-04-21T04:45:01Z",
+      "end": "2026-05-14T06:53:35Z",
+      "mid_year": 2026.324,
+      "detectors": [
+        5,
+        6
+      ],
+      "wavelength_um": [
+        3.832,
+        4.967
+      ],
+      "saturated_px": 0
+    }
+  ]
+}

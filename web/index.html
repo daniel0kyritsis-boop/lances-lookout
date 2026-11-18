@@ -343,9 +343,18 @@ function showAutoChoice(m) {            // "Detectors: auto" also says what auto
   const opt = $("dets").querySelector('option[value=""]');
   opt.textContent = !S.query.detectors && m.detectors_used ? `Detectors: auto → ${detName(m.detectors_used)}` : "Detectors: auto";
 }
+function markBuilt(m) {               // label options that would need a fresh IRSA download
+  if (!m.built) return;
+  for (const [id, ok] of [["dets", m.built.detectors], ["fov", m.built.fov]])
+    for (const o of $(id).options) {
+      if (o.value === "") continue;   // "auto" always works
+      o.dataset.label ??= o.textContent;
+      o.textContent = o.dataset.label + (ok.includes(o.value) ? "" : " — not downloaded");
+    }
+}
 function show(m) {
   S.meta = m; S.idx = 0;
-  showAutoChoice(m);
+  showAutoChoice(m); markBuilt(m);
   // strip of epochs
   $("strip").innerHTML = "";
   m.frames.forEach((f, i) => {

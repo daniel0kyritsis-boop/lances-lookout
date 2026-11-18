@@ -6,11 +6,11 @@ __pycache__/
 prefetch_*.json
 # Only the test targets' and famous stars' frames ship with the app; anything else is built on demand.
 frames/*
-!frames/barnards-star/
-!frames/eps-ind-b/
-!frames/wise-j085510-83-071442-5_d5-6/
-!frames/rw-aur/
-!frames/r-dra/
+!frames/barnards-star*/
+!frames/eps-ind-b*/
+!frames/wise-j085510-83-071442-5*/
+!frames/rw-aur*/
+!frames/r-dra*/
 # The famous-stars row, pre-built (any detector choice) so those buttons load instantly too.
 !frames/sirius*/
 !frames/betelgeuse*/

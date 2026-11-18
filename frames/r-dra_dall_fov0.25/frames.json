@@ -1,0 +1,128 @@
+{
+  "target": "R Dra",
+  "ra": 248.1674167,
+  "dec": 66.7551111,
+  "fov_deg": 0.25,
+  "width": 291,
+  "height": 291,
+  "pixel_arcsec": 3.1,
+  "wcs": {
+    "CTYPE1": "RA---TAN",
+    "CTYPE2": "DEC--TAN",
+    "CRVAL1": 248.16741666667,
+    "CRVAL2": 66.755111111111,
+    "CRPIX1": 146.0,
+    "CRPIX2": 146.0,
+    "CDELT1": -0.00086111111111111,
+    "CDELT2": 0.00086111111111111
+  },
+  "display": {
+    "stretch": "asinh",
+    "vmin": -0.05627976357936859,
+    "vmax": 816.5669555664062,
+    "unit": "MJy/sr",
+    "diff_limit": 7.523273468017578
+  },
+  "combine": {
+    "method": "per-detector median, noise-weighted average",
+    "detectors": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "noise_mjy_sr": {
+      "1": 0.04963,
+      "2": 0.04431,
+      "3": 0.09094,
+      "4": 0.03442,
+      "5": 0.03915,
+      "6": 0.04124
+    },
+    "weights": {
+      "1": 0.13,
+      "2": 0.163,
+      "3": 0.039,
+      "4": 0.271,
+      "5": 0.209,
+      "6": 0.188
+    },
+    "dropped": []
+  },
+  "pair": {
+    "file": "pair.png",
+    "from_epoch": 0,
+    "to_epoch": 2,
+    "note": "later minus earlier: white = brighter now, black = fainter now"
+  },
+  "frames": [
+    {
+      "epoch": 0,
+      "file": "epoch_0.png",
+      "diff_file": "diff_0.png",
+      "n_frames": 28,
+      "start": "2025-04-24T21:06:38Z",
+      "end": "2025-06-15T10:48:29Z",
+      "mid_year": 2025.429,
+      "detectors": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "wavelength_um": [
+        0.942,
+        4.601
+      ],
+      "saturated_px": 681
+    },
+    {
+      "epoch": 1,
+      "file": "epoch_1.png",
+      "diff_file": "diff_1.png",
+      "n_frames": 78,
+      "start": "2025-06-22T15:36:03Z",
+      "end": "2026-01-13T09:50:36Z",
+      "mid_year": 2025.915,
+      "detectors": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "wavelength_um": [
+        0.758,
+        4.62
+      ],
+      "saturated_px": 381
+    },
+    {
+      "epoch": 2,
+      "file": "epoch_2.png",
+      "diff_file": "diff_2.png",
+      "n_frames": 134,
+      "start": "2026-02-16T16:47:19Z",
+      "end": "2026-09-21T19:03:19Z",
+      "mid_year": 2026.471,
+      "detectors": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "wavelength_um": [
+        0.732,
+        5.0
+      ],
+      "saturated_px": 181
+    }
+  ]
+}

@@ -192,6 +192,22 @@ def _prebuilt_view(tgt, key) -> str | None:
     return folder if (FRAMES_DIR / folder / "frames.json").exists() else None
 
 
+# The page's dropdown values (web/index.html), so it can mark the ones already built.
+DET_OPTIONS = {"1": [1], "2": [2], "3": [3], "4": [4], "5": [5], "6": [6], "5,6": [5, 6], "all": None}
+FOV_OPTIONS = ["0.05", "0.1", "0.2", "0.25"]
+
+
+def _built_options(tgt, meta) -> dict:
+    """Which detector and field-of-view choices are already built for this target,
+    for the field of view and detectors being shown (the page labels the rest)."""
+    fov = meta["fov_deg"]
+    dets = meta.get("detectors_used")
+    dets = None if dets and len(dets) == 6 else dets
+    has = lambda d, f: (FRAMES_DIR / frames.folder_name(tgt.name, d, f) / "frames.json").exists()
+    return {"detectors": [v for v, d in DET_OPTIONS.items() if has(d, fov)],
+            "fov": [v for v in FOV_OPTIONS if has(dets, float(v))]}
+
+
 def _ready(name: str) -> bool:
     """Does this name have frames built, so its button loads instantly?"""
     choice = _remembered(name)
@@ -285,6 +301,7 @@ def get_frames(target: str | None = None, ra: float | None = None, dec: float | 
         meta["detector_choice"] = choice
     if key:
         meta["test_target"] = {"key": key, **TARGET_INFO[key]}
+    meta["built"] = _built_options(tgt, meta)
     return meta
 
 

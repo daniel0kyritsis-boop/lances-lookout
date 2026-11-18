@@ -1,0 +1,85 @@
+{
+  "target": "R Dra",
+  "ra": 248.1674167,
+  "dec": 66.7551111,
+  "fov_deg": 0.2,
+  "width": 233,
+  "height": 233,
+  "pixel_arcsec": 3.1,
+  "wcs": {
+    "CTYPE1": "RA---TAN",
+    "CTYPE2": "DEC--TAN",
+    "CRVAL1": 248.16741666667,
+    "CRVAL2": 66.755111111111,
+    "CRPIX1": 117.0,
+    "CRPIX2": 117.0,
+    "CDELT1": -0.00086111111111111,
+    "CDELT2": 0.00086111111111111
+  },
+  "display": {
+    "stretch": "asinh",
+    "vmin": -0.10874735563993454,
+    "vmax": 1045.736083984375,
+    "unit": "MJy/sr",
+    "diff_limit": 11.931835174560547
+  },
+  "pair": {
+    "file": "pair.png",
+    "from_epoch": 0,
+    "to_epoch": 2,
+    "note": "later minus earlier: white = brighter now, black = fainter now"
+  },
+  "frames": [
+    {
+      "epoch": 0,
+      "file": "epoch_0.png",
+      "diff_file": "diff_0.png",
+      "n_frames": 33,
+      "start": "2025-06-08T18:54:21Z",
+      "end": "2025-07-02T21:49:02Z",
+      "mid_year": 2025.473,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.104,
+        1.619
+      ],
+      "saturated_px": 46
+    },
+    {
+      "epoch": 1,
+      "file": "epoch_1.png",
+      "diff_file": "diff_1.png",
+      "n_frames": 37,
+      "start": "2025-11-18T17:35:08Z",
+      "end": "2025-12-14T17:43:34Z",
+      "mid_year": 2025.942,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.096,
+        1.651
+      ],
+      "saturated_px": 40
+    },
+    {
+      "epoch": 2,
+      "file": "epoch_2.png",
+      "diff_file": "diff_2.png",
+      "n_frames": 19,
+      "start": "2026-06-21T03:25:05Z",
+      "end": "2026-06-23T10:53:17Z",
+      "mid_year": 2026.47,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.087,
+        1.637
+      ],
+      "saturated_px": 38
+    }
+  ]
+}

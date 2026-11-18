@@ -91,7 +91,10 @@ def test_archive_down_falls_back_to_prebuilt_view(monkeypatch):
         r = c.get("/api/frames", params={"target": "Polaris", **params})
         assert r.status_code == 200, r.text
         assert r.json()["fallback"] is True and r.json()["fov_deg"] == 0.1
-    assert "fallback" not in c.get("/api/frames", params={"target": "Polaris"}).json()
+    m = c.get("/api/frames", params={"target": "Polaris"}).json()
+    assert "fallback" not in m
+    assert "2" in m["built"]["detectors"] and "4" not in m["built"]["detectors"]
+    assert "0.1" in m["built"]["fov"]
 
 
 def test_single_detector_from_a_cached_pair(tmp_path, monkeypatch):

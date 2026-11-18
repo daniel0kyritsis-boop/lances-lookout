@@ -1,0 +1,103 @@
+{
+  "target": "Polaris",
+  "ra": 37.9797242,
+  "dec": 89.2640228,
+  "fov_deg": 0.25,
+  "width": 291,
+  "height": 291,
+  "pixel_arcsec": 3.1,
+  "wcs": {
+    "CTYPE1": "RA---TAN",
+    "CTYPE2": "DEC--TAN",
+    "CRVAL1": 37.979724244032,
+    "CRVAL2": 89.264022788615,
+    "CRPIX1": 146.0,
+    "CRPIX2": 146.0,
+    "CDELT1": -0.00086111111111111,
+    "CDELT2": 0.00086111111111111
+  },
+  "display": {
+    "stretch": "asinh",
+    "vmin": -0.4089893400669098,
+    "vmax": 1689.313232421875,
+    "unit": "MJy/sr",
+    "diff_limit": 31.9292049407959
+  },
+  "combine": null,
+  "pair": {
+    "file": "pair.png",
+    "from_epoch": 0,
+    "to_epoch": 3,
+    "note": "later minus earlier: white = brighter now, black = fainter now"
+  },
+  "frames": [
+    {
+      "epoch": 0,
+      "file": "epoch_0.png",
+      "diff_file": "diff_0.png",
+      "n_frames": 26,
+      "start": "2025-09-08T08:32:06Z",
+      "end": "2025-09-14T12:49:15Z",
+      "mid_year": 2025.691,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.11,
+        1.637
+      ],
+      "saturated_px": 114
+    },
+    {
+      "epoch": 1,
+      "file": "epoch_1.png",
+      "diff_file": "diff_1.png",
+      "n_frames": 4,
+      "start": "2025-10-16T01:12:47Z",
+      "end": "2025-10-16T01:19:14Z",
+      "mid_year": 2025.789,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.29,
+        1.385
+      ],
+      "saturated_px": 185
+    },
+    {
+      "epoch": 2,
+      "file": "epoch_2.png",
+      "diff_file": "diff_2.png",
+      "n_frames": 25,
+      "start": "2026-02-23T05:21:43Z",
+      "end": "2026-03-04T10:57:40Z",
+      "mid_year": 2026.162,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.098,
+        1.63
+      ],
+      "saturated_px": 166
+    },
+    {
+      "epoch": 3,
+      "file": "epoch_3.png",
+      "diff_file": "diff_3.png",
+      "n_frames": 25,
+      "start": "2026-09-08T13:26:37Z",
+      "end": "2026-09-17T10:45:17Z",
+      "mid_year": 2026.693,
+      "detectors": [
+        2
+      ],
+      "wavelength_um": [
+        1.099,
+        1.617
+      ],
+      "saturated_px": 151
+    }
+  ]
+}
