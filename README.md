@@ -5,6 +5,15 @@ all-sky survey. Type a star name or coordinates and it shows a looping "blink" o
 every SPHEREx visit to that patch of sky, aligned and stacked, so a fast-moving
 star or a variable star stands out against the fixed background.
 
+Lance's Lookout was built by The Buttered Croissants for the NASA Space Apps Challenge 2026 (Planet X and SPHEREx challenge).
+
+Daniel George Kyritsis (@daniel0kyritsis-boop)
+Hiba Ahsen (@hibahsen)
+Meggi Bega Sejdini
+Lance Wahlstedt
+Hania Sohail
+Ophelia Yau
+
 Built for the **Planet X and SPHEREx** challenge. All five required test targets work:
 
 | Target | Type | What you see |
