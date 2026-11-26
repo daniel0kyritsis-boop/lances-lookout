@@ -17,6 +17,7 @@ Lance's Lookout was built by **The Buttered Croissants** for the NASA Space Apps
 - Hania Sohail
 - Ophelia Yau
 
+
 | Target | Type | What you see |
 |---|---|---|
 | Barnard's Star | moving, ~10″/yr | Moves north across 3 epochs |
