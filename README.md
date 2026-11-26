@@ -7,6 +7,16 @@ star or a variable star stands out against the fixed background.
 
 Built for the **Planet X and SPHEREx** challenge. All five required test targets work:
 
+## Team
+
+Lance's Lookout was built by **The Buttered Croissants** for the NASA Space Apps Challenge 2026 (Planet X and SPHEREx challenge).
+- Daniel George Kyritsis ([@daniel0kyritsis-boop](https://github.com/daniel0kyritsis-boop))
+- Hiba Ahsen ([@hibahsen](https://github.com/your-username))
+- Meggi Bega Sejdini
+- Lance Wahlstedt
+- Hania Sohail
+- Ophelia Yau
+
 | Target | Type | What you see |
 |---|---|---|
 | Barnard's Star | moving, ~10″/yr | Moves north across 3 epochs |
